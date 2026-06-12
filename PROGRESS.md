@@ -5,23 +5,23 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `0 / 266` tickets · `0 / 22` epics complete.
+**Overall:** `12 / 266` tickets · `1 / 22` epics complete.
 
 ---
 
-## ☐ EPIC-PLAT · Platform & Infrastructure (0/12)
-- [ ] PLAT-1 · Monorepo scaffold
-- [ ] PLAT-2 · FastAPI scaffold (layered)
-- [ ] PLAT-3 · Prisma Client Python + Postgres wiring
-- [ ] PLAT-4 · React SPA scaffold (Vite + Tailwind + DaisyUI)
-- [ ] PLAT-5 · Shared package (types + Zod + enums)
-- [ ] PLAT-6 · Error handling + structured logging
-- [ ] PLAT-7 · App shell (Sidebar/Header/PageShell) + UI kit
-- [ ] PLAT-8 · Testing harness (pytest + vitest + test DB)
-- [ ] PLAT-9 · Dockerization + docker-compose
-- [ ] PLAT-10 · OpenAPI docs
-- [ ] PLAT-11 · CI/CD pipeline
-- [ ] PLAT-12 · ✔ Check — Platform module-wide
+## ☑ EPIC-PLAT · Platform & Infrastructure (12/12)
+- [x] PLAT-1 · Monorepo scaffold
+- [x] PLAT-2 · FastAPI scaffold (layered)
+- [x] PLAT-3 · Prisma Client Python + Postgres wiring
+- [x] PLAT-4 · React SPA scaffold (Vite + Tailwind + DaisyUI)
+- [x] PLAT-5 · Shared package (types + Zod + enums)
+- [x] PLAT-6 · Error handling + structured logging
+- [x] PLAT-7 · App shell (Sidebar/Header/PageShell) + UI kit
+- [x] PLAT-8 · Testing harness (pytest + vitest + test DB)
+- [x] PLAT-9 · Dockerization + docker-compose
+- [x] PLAT-10 · OpenAPI docs
+- [x] PLAT-11 · CI/CD pipeline
+- [x] PLAT-12 · ✔ Check — Platform module-wide
 
 ## ☐ EPIC-DB · Database & Schema (all modules) (0/16)
 - [ ] DB-1 · Provision PostgreSQL database, roles & extensions
