@@ -5,7 +5,7 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `12 / 266` tickets · `1 / 22` epics complete.
+**Overall:** `28 / 266` tickets · `2 / 22` epics complete.
 
 ---
 
@@ -23,26 +23,26 @@
 - [x] PLAT-11 · CI/CD pipeline
 - [x] PLAT-12 · ✔ Check — Platform module-wide
 
-## ☐ EPIC-DB · Database & Schema (all modules) (0/16)
-- [ ] DB-1 · Provision PostgreSQL database, roles & extensions
-- [ ] DB-2 · Prisma schema foundation (datasource, generator, conventions, enums)
-- [ ] DB-3 · Identity & access tables
-- [ ] DB-4 · Lead, Contact & Account tables
-- [ ] DB-5 · Opportunity & Pipeline tables
-- [ ] DB-6 · Activity & Task tables
-- [ ] DB-7 · Ticketing, SLA & Knowledge Base tables
-- [ ] DB-8 · Project & Delivery tables
-- [ ] DB-9 · Contract & Invoicing tables
-- [ ] DB-10 · Campaign & Communication tables
-- [ ] DB-11 · Admin/Config, Integration & Data-management tables
-- [ ] DB-12 · Cross-module relations, indexes, constraints & cascade rules
-- [ ] DB-13 · Initial migration (generate + apply)
-- [ ] DB-14 · Seed data (reference + demo) for all modules
-- [ ] DB-15 · ERD + data dictionary documentation
-- [ ] DB-16 · ✔ Check — Database module-wide
+## ☑ EPIC-DB · Database & Schema (all modules) (16/16)
+- [x] DB-1 · Provision PostgreSQL database, roles & extensions
+- [x] DB-2 · Prisma schema foundation (datasource, generator, conventions, enums)
+- [x] DB-3 · Identity & access tables
+- [x] DB-4 · Lead, Contact & Account tables
+- [x] DB-5 · Opportunity & Pipeline tables
+- [x] DB-6 · Activity & Task tables
+- [x] DB-7 · Ticketing, SLA & Knowledge Base tables
+- [x] DB-8 · Project & Delivery tables
+- [x] DB-9 · Contract & Invoicing tables
+- [x] DB-10 · Campaign & Communication tables
+- [x] DB-11 · Admin/Config, Integration & Data-management tables
+- [x] DB-12 · Cross-module relations, indexes, constraints & cascade rules
+- [x] DB-13 · Initial migration (generate + apply)
+- [x] DB-14 · Seed data (reference + demo) for all modules
+- [x] DB-15 · ERD + data dictionary documentation
+- [x] DB-16 · ✔ Check — Database module-wide
 
 ## ☐ EPIC-AUTH · Authentication & Access (0/10)
-- [ ] AUTH-1 · Identity schema (User, Role, Team, Session, AuditLog)
+- [x] AUTH-1 · Identity schema (User, Role, Team, Session, AuditLog)
 - [ ] AUTH-2 · Register/Login/Logout/Session API
 - [ ] AUTH-3 · 2FA (TOTP) enrollment + enforcement
 - [ ] AUTH-4 · Auth dependencies (require_auth/require_role)
@@ -54,7 +54,7 @@
 - [ ] AUTH-10 · ✔ Check — Auth module-wide
 
 ## ☐ EPIC-LEAD · Lead Management (0/16)
-- [ ] LEAD-1 · Lead schema (Lead, LeadSource, LeadScoreRule)
+- [x] LEAD-1 · Lead schema (Lead, LeadSource, LeadScoreRule)
 - [ ] LEAD-2 · Lead Pydantic/Zod schemas
 - [ ] LEAD-3 · Lead CRUD API
 - [ ] LEAD-4 · Multi-source capture + UTM
@@ -72,7 +72,7 @@
 - [ ] LEAD-16 · ✔ Check — Lead module-wide
 
 ## ☐ EPIC-CONT · Contact Management (0/11)
-- [ ] CONT-1 · Contact schema (Contact, ContactRole, Interaction)
+- [x] CONT-1 · Contact schema (Contact, ContactRole, Interaction)
 - [ ] CONT-2 · Schemas (Pydantic/Zod)
 - [ ] CONT-3 · Contact CRUD API
 - [ ] CONT-4 · Multi-account association
@@ -85,7 +85,7 @@
 - [ ] CONT-11 · ✔ Check — Contact module-wide
 
 ## ☐ EPIC-ACCT · Account Management (0/12)
-- [ ] ACCT-1 · Account schema (+hierarchy, tier, healthScore)
+- [x] ACCT-1 · Account schema (+hierarchy, tier, healthScore)
 - [ ] ACCT-2 · Schemas (Pydantic/Zod)
 - [ ] ACCT-3 · Account CRUD API
 - [ ] ACCT-4 · Tier management
@@ -99,7 +99,7 @@
 - [ ] ACCT-12 · ✔ Check — Account module-wide
 
 ## ☐ EPIC-PIPE · Opportunity & Sales Pipeline (0/16)
-- [ ] PIPE-1 · Pipeline schema (Pipeline, Stage, Opportunity, Proposal, Quote, Product)
+- [x] PIPE-1 · Pipeline schema (Pipeline, Stage, Opportunity, Proposal, Quote, Product)
 - [ ] PIPE-2 · Schemas (Pydantic/Zod)
 - [ ] PIPE-3 · Deal CRUD API
 - [ ] PIPE-4 · Color-coding metadata (value/age/priority)
@@ -117,7 +117,7 @@
 - [ ] PIPE-16 · ✔ Check — Pipeline module-wide
 
 ## ☐ EPIC-ACTV · Activity & Task Management (0/12)
-- [ ] ACTV-1 · Activity/Task schema (Activity, Task, Reminder)
+- [x] ACTV-1 · Activity/Task schema (Activity, Task, Reminder)
 - [ ] ACTV-2 · Schemas (Pydantic/Zod)
 - [ ] ACTV-3 · Activity logging API
 - [ ] ACTV-4 · Tasks & reminders API
@@ -131,7 +131,7 @@
 - [ ] ACTV-12 · ✔ Check — Activity module-wide
 
 ## ☐ EPIC-TICK · Service Ticketing (0/11)
-- [ ] TICK-1 · Ticket schema (Ticket, Category, Priority, TicketNote)
+- [x] TICK-1 · Ticket schema (Ticket, Category, Priority, TicketNote)
 - [ ] TICK-2 · Schemas (Pydantic/Zod)
 - [ ] TICK-3 · Ticket CRUD API (multi-channel)
 - [ ] TICK-4 · Categorization, priority, linking
@@ -144,7 +144,7 @@
 - [ ] TICK-11 · ✔ Check — Ticketing module-wide
 
 ## ☐ EPIC-SLA · SLA Management (0/11)
-- [ ] SLA-1 · SLA schema (SLAPolicy, SLATracker)
+- [x] SLA-1 · SLA schema (SLAPolicy, SLATracker)
 - [ ] SLA-2 · Schemas (Pydantic/Zod)
 - [ ] SLA-3 · SLA policy CRUD API
 - [ ] SLA-4 · Response/resolution tracking
@@ -157,7 +157,7 @@
 - [ ] SLA-11 · ✔ Check — SLA module-wide
 
 ## ☐ EPIC-KB · Knowledge Base (0/11)
-- [ ] KB-1 · KB schema (Article, KbCategory, ArticleRating)
+- [x] KB-1 · KB schema (Article, KbCategory, ArticleRating)
 - [ ] KB-2 · Schemas (Pydantic/Zod)
 - [ ] KB-3 · Article CRUD + search API
 - [ ] KB-4 · Suggestion engine
@@ -170,7 +170,7 @@
 - [ ] KB-11 · ✔ Check — KB module-wide
 
 ## ☐ EPIC-PROJ · Project & Delivery (0/15)
-- [ ] PROJ-1 · Project schema (Project, Phase, Milestone, ProjectTask, Document)
+- [x] PROJ-1 · Project schema (Project, Phase, Milestone, ProjectTask, Document)
 - [ ] PROJ-2 · Schemas (Pydantic/Zod)
 - [ ] PROJ-3 · Project CRUD API
 - [ ] PROJ-4 · Phases & milestones
@@ -187,7 +187,7 @@
 - [ ] PROJ-15 · ✔ Check — Project module-wide
 
 ## ☐ EPIC-CONTR · Contract & Renewal (0/13)
-- [ ] CONTR-1 · Contract schema (Contract, Amendment, Signature)
+- [x] CONTR-1 · Contract schema (Contract, Amendment, Signature)
 - [ ] CONTR-2 · Schemas (Pydantic/Zod)
 - [ ] CONTR-3 · Contract CRUD API (+auto-renew flag)
 - [ ] CONTR-4 · Renewal reminders (90/60/30)
@@ -202,7 +202,7 @@
 - [ ] CONTR-13 · ✔ Check — Contract module-wide
 
 ## ☐ EPIC-INV · Invoicing & Revenue (0/13)
-- [ ] INV-1 · Invoice schema (Invoice, LineItem, Payment)
+- [x] INV-1 · Invoice schema (Invoice, LineItem, Payment)
 - [ ] INV-2 · Schemas (Pydantic/Zod)
 - [ ] INV-3 · Invoice generation from deals/contracts
 - [ ] INV-4 · Payment status tracking
@@ -217,7 +217,7 @@
 - [ ] INV-13 · ✔ Check — Invoicing module-wide
 
 ## ☐ EPIC-CAMP · Marketing & Campaigns (0/13)
-- [ ] CAMP-1 · Campaign schema (Campaign, AudienceSegment, CampaignMetric, Event)
+- [x] CAMP-1 · Campaign schema (Campaign, AudienceSegment, CampaignMetric, Event)
 - [ ] CAMP-2 · Schemas (Pydantic/Zod)
 - [ ] CAMP-3 · Campaign CRUD + segments API
 - [ ] CAMP-4 · Performance tracking
@@ -248,7 +248,7 @@
 - [ ] ANLY-14 · ✔ Check — Analytics module-wide
 
 ## ☐ EPIC-COMM · Communication & Collaboration (0/12)
-- [ ] COMM-1 · Schema (Notification, Mention, Comment)
+- [x] COMM-1 · Schema (Notification, Mention, Comment)
 - [ ] COMM-2 · Schemas (Pydantic/Zod)
 - [ ] COMM-3 · Unified communication log
 - [ ] COMM-4 · In-app notifications + @mention
@@ -262,7 +262,7 @@
 - [ ] COMM-12 · ✔ Check — Comms module-wide
 
 ## ☐ EPIC-ADMN · Admin & Configuration (0/11)
-- [ ] ADMN-1 · Config schema (CustomField, Layout, Workflow, Permission)
+- [x] ADMN-1 · Config schema (CustomField, Layout, Workflow, Permission)
 - [ ] ADMN-2 · RBAC field/record permission management
 - [ ] ADMN-3 · Custom fields & layouts
 - [ ] ADMN-4 · Workflow automation engine
