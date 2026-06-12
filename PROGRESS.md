@@ -5,7 +5,7 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `28 / 266` tickets · `2 / 22` epics complete.
+**Overall:** `37 / 266` tickets · `3 / 22` epics complete.
 
 ---
 
@@ -41,17 +41,17 @@
 - [x] DB-15 · ERD + data dictionary documentation
 - [x] DB-16 · ✔ Check — Database module-wide
 
-## ☐ EPIC-AUTH · Authentication & Access (0/10)
+## ☑ EPIC-AUTH · Authentication & Access (10/10)
 - [x] AUTH-1 · Identity schema (User, Role, Team, Session, AuditLog)
-- [ ] AUTH-2 · Register/Login/Logout/Session API
-- [ ] AUTH-3 · 2FA (TOTP) enrollment + enforcement
-- [ ] AUTH-4 · Auth dependencies (require_auth/require_role)
-- [ ] AUTH-5 · Session timeout + refresh
-- [ ] AUTH-6 · Password reset + email verification
-- [ ] AUTH-7 · RBAC policy layer (field + record level)
-- [ ] AUTH-8 · Audit logging service
-- [ ] AUTH-9 · SPA auth (login/register/2FA, guard, context)
-- [ ] AUTH-10 · ✔ Check — Auth module-wide
+- [x] AUTH-2 · Register/Login/Logout/Session API
+- [x] AUTH-3 · 2FA (TOTP) enrollment + enforcement
+- [x] AUTH-4 · Auth dependencies (require_auth/require_role)
+- [x] AUTH-5 · Session timeout + refresh
+- [x] AUTH-6 · Password reset + email verification
+- [x] AUTH-7 · RBAC policy layer (field + record level)
+- [x] AUTH-8 · Audit logging service
+- [x] AUTH-9 · SPA auth (login/register/2FA, guard, context)
+- [x] AUTH-10 · ✔ Check — Auth module-wide
 
 ## ☐ EPIC-LEAD · Lead Management (0/16)
 - [x] LEAD-1 · Lead schema (Lead, LeadSource, LeadScoreRule)

@@ -7,6 +7,7 @@ from app.core.envelope import ok
 from app.core.logging import configure_logging
 from app.db.client import connect, disconnect
 from app.middleware.error_handler import add_exception_handlers
+from app.modules.auth.router import router as auth_router
 
 
 @asynccontextmanager
@@ -28,6 +29,8 @@ app.add_middleware(
 )
 
 add_exception_handlers(app)
+
+app.include_router(auth_router)
 
 
 @app.get("/health")
