@@ -5,7 +5,7 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `157 / 266` tickets · `3 / 22` epics complete.
+**Overall:** `193 / 266` tickets · `3 / 22` epics complete.
 
 ---
 
@@ -216,49 +216,49 @@
 - [x] INV-12 · Seed/fixtures
 - [ ] INV-13 · ✔ Check — Invoicing module-wide
 
-## ☐ EPIC-CAMP · Marketing & Campaigns (0/13)
+## ☐ EPIC-CAMP · Marketing & Campaigns (12/13)
 - [x] CAMP-1 · Campaign schema (Campaign, AudienceSegment, CampaignMetric, Event)
-- [ ] CAMP-2 · Schemas (Pydantic/Zod)
-- [ ] CAMP-3 · Campaign CRUD + segments API
-- [ ] CAMP-4 · Performance tracking
-- [ ] CAMP-5 · Drip email sequences
-- [ ] CAMP-6 · Event management
-- [ ] CAMP-7 · ROI attribution
-- [ ] CAMP-8 · Frontend hooks
-- [ ] CAMP-9 · UI: Campaign list
-- [ ] CAMP-10 · UI: Campaign form
-- [ ] CAMP-11 · UI: Campaign analytics
-- [ ] CAMP-12 · Seed/fixtures
+- [x] CAMP-2 · Schemas (Pydantic/Zod)
+- [x] CAMP-3 · Campaign CRUD + segments API
+- [x] CAMP-4 · Performance tracking
+- [x] CAMP-5 · Drip email sequences
+- [x] CAMP-6 · Event management
+- [x] CAMP-7 · ROI attribution
+- [x] CAMP-8 · Frontend hooks
+- [x] CAMP-9 · UI: Campaign list
+- [x] CAMP-10 · UI: Campaign form
+- [x] CAMP-11 · UI: Campaign analytics
+- [x] CAMP-12 · Seed/fixtures
 - [ ] CAMP-13 · ✔ Check — Campaign module-wide
 
-## ☐ EPIC-ANLY · Analytics & Reporting (0/14)
-- [ ] ANLY-1 · Reporting data model / DB views
-- [ ] ANLY-2 · Role-based dashboard aggregation API
-- [ ] ANLY-3 · Pre-built reports (all 10 §9.1)
-- [ ] ANLY-4 · Custom report builder API
-- [ ] ANLY-5 · Scheduled report delivery
-- [ ] ANLY-6 · Export PDF/Excel/CSV
-- [ ] ANLY-7 · Frontend hooks
-- [ ] ANLY-8 · UI: Analytics dashboard
-- [ ] ANLY-9 · UI: Role dashboards (home)
-- [ ] ANLY-10 · UI: Custom report builder
-- [ ] ANLY-11 · Report scheduling UI
-- [ ] ANLY-12 · Drill-down navigation
-- [ ] ANLY-13 · Performance: cache/materialize heavy reports
+## ☐ EPIC-ANLY · Analytics & Reporting (13/14)
+- [x] ANLY-1 · Reporting data model / DB views
+- [x] ANLY-2 · Role-based dashboard aggregation API
+- [x] ANLY-3 · Pre-built reports (all 10 §9.1)
+- [x] ANLY-4 · Custom report builder API
+- [x] ANLY-5 · Scheduled report delivery
+- [x] ANLY-6 · Export PDF/Excel/CSV
+- [x] ANLY-7 · Frontend hooks
+- [x] ANLY-8 · UI: Analytics dashboard
+- [x] ANLY-9 · UI: Role dashboards (home)
+- [x] ANLY-10 · UI: Custom report builder
+- [x] ANLY-11 · Report scheduling UI
+- [x] ANLY-12 · Drill-down navigation
+- [x] ANLY-13 · Performance: cache/materialize heavy reports
 - [ ] ANLY-14 · ✔ Check — Analytics module-wide
 
-## ☐ EPIC-COMM · Communication & Collaboration (0/12)
+## ☐ EPIC-COMM · Communication & Collaboration (11/12)
 - [x] COMM-1 · Schema (Notification, Mention, Comment)
-- [ ] COMM-2 · Schemas (Pydantic/Zod)
-- [ ] COMM-3 · Unified communication log
-- [ ] COMM-4 · In-app notifications + @mention
-- [ ] COMM-5 · Slack/Teams integration
-- [ ] COMM-6 · Email templates
-- [ ] COMM-7 · Comment threads on records
-- [ ] COMM-8 · Frontend hooks
-- [ ] COMM-9 · UI: Notification center
-- [ ] COMM-10 · UI: Comment threads component
-- [ ] COMM-11 · UI: Email template manager
+- [x] COMM-2 · Schemas (Pydantic/Zod)
+- [x] COMM-3 · Unified communication log
+- [x] COMM-4 · In-app notifications + @mention
+- [x] COMM-5 · Slack/Teams integration
+- [x] COMM-6 · Email templates
+- [x] COMM-7 · Comment threads on records
+- [x] COMM-8 · Frontend hooks
+- [x] COMM-9 · UI: Notification center
+- [x] COMM-10 · UI: Comment threads component
+- [x] COMM-11 · UI: Email template manager
 - [ ] COMM-12 · ✔ Check — Comms module-wide
 
 ## ☐ EPIC-ADMN · Admin & Configuration (0/11)

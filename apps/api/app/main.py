@@ -20,6 +20,9 @@ from app.modules.integration.router import router as integration_router
 from app.modules.project.router import router as project_router
 from app.modules.contract.router import router as contract_router
 from app.modules.invoice.router import router as invoice_router
+from app.modules.campaign.router import router as campaign_router
+from app.modules.analytics.router import router as analytics_router
+from app.modules.comms.router import router as comms_router
 
 
 @asynccontextmanager
@@ -55,6 +58,9 @@ app.include_router(integration_router, prefix="/api/v1")
 app.include_router(project_router, prefix="/api/v1")
 app.include_router(contract_router, prefix="/api/v1")
 app.include_router(invoice_router, prefix="/api/v1")
+app.include_router(campaign_router, prefix="/api/v1")
+app.include_router(analytics_router, prefix="/api/v1")
+app.include_router(comms_router, prefix="/api/v1")
 
 
 @app.get("/health")

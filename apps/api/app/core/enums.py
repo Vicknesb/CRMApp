@@ -117,3 +117,19 @@ class SignatureStatus(str, Enum):
     PENDING = "PENDING"
     SIGNED = "SIGNED"
     DECLINED = "DECLINED"
+
+
+class CampaignType(str, Enum):
+    EMAIL = "EMAIL"
+    LINKEDIN = "LINKEDIN"
+    WEBINAR = "WEBINAR"
+    EVENT = "EVENT"
+    CONTENT = "CONTENT"
+    SMS = "SMS"
+
+
+class CampaignStatus(str, Enum):
+    DRAFT = "DRAFT"
+    ACTIVE = "ACTIVE"
+    PAUSED = "PAUSED"
+    COMPLETED = "COMPLETED"

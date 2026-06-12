@@ -21,6 +21,11 @@ import { ContractsListPage } from './features/contracts/pages/ContractsListPage'
 import { ContractFormPage } from './features/contracts/pages/ContractFormPage'
 import { InvoicesListPage } from './features/invoices/pages/InvoicesListPage'
 import { InvoiceFormPage } from './features/invoices/pages/InvoiceFormPage'
+import { CampaignsListPage } from './features/campaigns/pages/CampaignsListPage'
+import { CampaignFormPage } from './features/campaigns/pages/CampaignFormPage'
+import { CampaignAnalyticsPage } from './features/campaigns/pages/CampaignAnalyticsPage'
+import { AnalyticsDashboardPage } from './features/analytics/pages/AnalyticsDashboardPage'
+import { NotificationCenterPage } from './features/comms/pages/NotificationCenterPage'
 
 function PlaceholderPage({ title }: { title: string }): JSX.Element {
   return (
@@ -85,11 +90,20 @@ export function AppRoutes(): JSX.Element {
         <Route path="/invoices" element={<PageShell title="Invoices"><InvoicesListPage /></PageShell>} />
         <Route path="/invoices/new" element={<PageShell title="New Invoice"><InvoiceFormPage /></PageShell>} />
 
-        {/* Placeholders for future epics */}
-        <Route path="/campaigns" element={<PlaceholderPage title="Campaigns" />} />
-        <Route path="/analytics" element={<PlaceholderPage title="Analytics" />} />
+        {/* Campaigns */}
+        <Route path="/campaigns" element={<PageShell title="Campaigns"><CampaignsListPage /></PageShell>} />
+        <Route path="/campaigns/new" element={<PageShell title="New Campaign"><CampaignFormPage /></PageShell>} />
+        <Route path="/campaigns/:id/edit" element={<PageShell title="Edit Campaign"><CampaignFormPage /></PageShell>} />
+        <Route path="/campaigns/:id/analytics" element={<PageShell title="Campaign Analytics"><CampaignAnalyticsPage /></PageShell>} />
+
+        {/* Analytics */}
+        <Route path="/analytics" element={<PageShell title="Analytics"><AnalyticsDashboardPage /></PageShell>} />
+
+        {/* Notifications */}
+        <Route path="/notifications" element={<PageShell title="Notifications"><NotificationCenterPage /></PageShell>} />
+
+        {/* Placeholders */}
         <Route path="/profile" element={<PlaceholderPage title="Profile" />} />
-        <Route path="/notifications" element={<PlaceholderPage title="Notifications" />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
