@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "Bash(pytest*)",
+      "Bash(vitest*)",
+      "Bash(npx vitest*)",
+      "Bash(python -m pytest*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git rev-parse*)",
+      "Bash(git config*)"
+    ],
+    "deny": [
+      "Bash(rm*)",
+      "Bash(rmdir*)",
+      "Bash(del*)",
+      "Bash(rd *)",
+      "Bash(git reset --hard*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git clean*)",
+      "Bash(git checkout -- *)",
+      "Bash(git restore*)",
+      "Bash(git branch -D*)",
+      "Bash(git rebase*)",
+      "Bash(drop table*)",
+      "Bash(truncate*)",
+      "Bash(delete from*)",
+      "Bash(prisma db push --force-reset*)",
+      "Bash(prisma migrate reset*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:CLAUDE_PROJECT_DIR\\.claude\\hooks\\guard-schema-prisma.ps1\"",
+            "timeout": 10,
+            "statusMessage": "Checking schema.prisma write guard..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:CLAUDE_PROJECT_DIR\\.claude\\hooks\\commit-on-task-complete.ps1\"",
+            "timeout": 60,
+            "statusMessage": "Checking for completed task to auto-commit..."
+          },
+          {
+            "type": "agent",
+            "model": "claude-haiku-4-5-20251001",
+            "if": "Edit(**/PROGRESS.md)",
+            "prompt": "You are the crm-reviewer. Steps: (1) Run `git status --porcelain` and `git log -1 --pretty=\"%h %s\"`. If tree is NOT clean OR commit subject does not end '[auto]', output 'skip' and stop. (2) Run `git show HEAD` to get the diff. Infer the ticket ID from the commit subject (e.g. LEAD-6) and read ONLY `tickets/<prefix>/<TICKET-ID>.md` (e.g. tickets/lead/LEAD-6.md) for its AC + Unit Tests. Do NOT read CRM_IMPLEMENTATION_TASKS.md, CLAUDE.md, or any other large file. (3) Review ONLY the HEAD diff for: correctness/bugs; security (Pydantic validation present, RBAC enforced, no injection/secrets, audit log on mutations); {data,error,meta} envelope + correct HTTP codes; conventions (snake_case Python, PascalCase components, typed, layered); tests present and >=80% coverage; SRS Req ID satisfied. (4) Output the VERDICT (under 25 lines): PASS or CHANGES-NEEDED, with Critical/High/Medium findings as file:line + fix. (5) Append the verdict to reports/review-findings.md: check if file exists first; if not create it with header '# CRM Review Findings Log'; get next review number by scanning for last '## Review #N'; append (do NOT re-read full file) a new entry: '## Review #N · <timestamp> · <hash> · <ticket>', verdict, findings, '**Review completed:** checkmark <timestamp>'. Always log even on PASS. Never edit source files.",
+            "timeout": 180,
+            "statusMessage": "Reviewing the auto-commit (crm-reviewer)..."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html data-theme="lemonade" lang="en">
+<head>
+  <style>/* crm-no-hscroll */ html,body{overflow-x:hidden;max-width:100vw;}</style>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IT CRM — My Profile</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body{font-family:'Inter',sans-serif;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;font-size:13.5px;color:rgba(0,0,0,0.55);cursor:pointer;text-decoration:none;transition:all .15s;}
+  .nav-item:hover{background:rgba(0,0,0,0.05);}
+  .nav-item.active{background:#507d2a;color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(80,125,42,0.35);}
+  .nav-item svg{width:16px;height:16px;flex-shrink:0;}
+  .card-s{box-shadow:0 1px 3px rgba(0,0,0,0.07),0 4px 12px rgba(0,0,0,0.05);}
+  .field-label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;}
+  .field-value{font-size:13.5px;color:#1f2937;font-weight:500;}
+  input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:9px 13px;font-size:13px;color:#1f2937;outline:none;transition:border .15s;}
+  input:focus,select:focus,textarea:focus{border-color:#507d2a;box-shadow:0 0 0 3px rgba(80,125,42,0.1);}
+  .toggle{width:42px;height:24px;background:#d1d5db;border-radius:999px;position:relative;cursor:pointer;transition:background .2s;flex-shrink:0;}
+  .toggle.on{background:#507d2a;}
+  .toggle::after{content:'';position:absolute;width:18px;height:18px;background:#fff;border-radius:50%;top:3px;left:3px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,0.2);}
+  .toggle.on::after{left:21px;}
+  .tab-btn{padding:8px 16px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;border:none;background:transparent;color:#6b7280;}
+  .tab-btn.active{background:#507d2a;color:#fff;}
+  .tab-btn:hover:not(.active){background:#f3f4f6;}
+</style>
+</head>
+<body class="bg-[#f4f5f0] min-h-screen">
+<div class="flex">
+
+<!-- SIDEBAR -->
+<aside class="w-[230px] min-h-screen bg-white border-r border-gray-200 flex flex-col fixed top-0 left-0 h-full z-20">
+  <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100">
+    <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#507d2a"><svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+    <div><p class="font-bold text-[15px] text-gray-900">IT CRM</p><p class="text-[11px] text-gray-400">IT Services Platform</p></div>
+  </div>
+  <nav class="flex-1 px-3 py-3 flex flex-col gap-0.5 overflow-y-auto">
+    <a href="01-dashboard.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
+    <a href="02-leads.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L13 13.414V19a1 1 0 01-.553.894l-4-2A1 1 0 018 17v-3.586L3.293 6.707A1 1 0 013 6V4z"/></svg>Leads<span class="ml-auto text-[11px] font-bold px-1.5 py-0.5 rounded-full" style="background:#e9f2e0;color:#507d2a">38</span></a>
+    <a href="03-contacts.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>Contacts</a>
+    <a href="04-accounts.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>Accounts</a>
+    <a href="05-pipeline.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>Pipeline</a>
+    <div class="my-1.5 border-t border-gray-100 mx-2"></div>
+    <a href="06-tickets.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>Support<span class="ml-auto text-[11px] font-bold px-1.5 py-0.5 rounded-full bg-red-100 text-red-600">3</span></a>
+    <a href="07-projects.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>Projects</a>
+    <a href="08-contracts.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Contracts</a>
+    <a href="09-invoicing.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>Invoicing</a>
+    <div class="my-1.5 border-t border-gray-100 mx-2"></div>
+    <a href="10-campaigns.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>Campaigns</a>
+    <a href="11-analytics.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>Analytics</a>
+    <a href="12-admin.html" class="nav-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Admin</a>
+  </nav>
+  <!-- User footer — highlighted since this is Profile page -->
+  <div class="px-4 py-3 border-t border-gray-100">
+    <a href="13-profile.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-gray-50 transition-colors" title="View Profile">
+      <div class="flex-1 min-w-0"><p class="text-[13px] font-semibold text-gray-800 truncate">Ravi Sharma</p><p class="text-[11px] text-gray-400 truncate">Sales Executive</p></div>
+      <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="flex-1 ml-[230px] flex flex-col min-h-screen min-w-0 overflow-x-hidden" style="max-width:calc(100vw - 230px)">
+  <header class="bg-white border-b border-gray-200 px-6 py-3.5 flex items-center justify-between sticky top-0 flex-wrap z-10" style="box-shadow:0 1px 4px rgba(0,0,0,0.06)">
+    <div class="flex items-center gap-3">
+      <a href="01-dashboard.html" class="text-gray-400 hover:text-gray-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg>
+      </a>
+      <div><h1 class="text-[17px] font-bold text-gray-900">My Profile</h1><p class="text-[12px] text-gray-400 mt-0.5">Manage your account, preferences &amp; security</p></div>
+    </div>
+    <div class="flex items-center gap-2.5">
+      <button onclick="saveProfile()" class="flex items-center gap-2 text-[13px] font-semibold text-white px-4 py-2 rounded-xl" style="background:#507d2a">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg>
+      Save Changes
+    </button>
+          <span class="w-px h-5 bg-gray-200 mx-1 flex-shrink-0"></span>
+          <button class="relative w-9 h-9 rounded-xl bg-gray-100 flex items-center justify-center hover:bg-gray-200" title="Notifications">
+            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 border border-white"></span>
+          </button>
+          <a href="13-profile.html" class="w-9 h-9 rounded-full flex items-center justify-center text-white text-[11px] font-bold hover:opacity-90 flex-shrink-0" style="background:#507d2a" title="My Profile">RS</a>
+    </div>
+  </header>
+
+  <main class="flex-1 p-6 overflow-x-hidden">
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Profile Hero Card -->
+      <div class="bg-white rounded-2xl card-s mb-5 overflow-hidden">
+        <!-- Cover gradient -->
+        <div class="h-28" style="background:linear-gradient(135deg,#507d2a 0%,#7ab648 50%,#a8d970 100%)"></div>
+        <div class="px-6 pb-5">
+          <div class="flex items-end justify-between -mt-12">
+            <div class="relative">
+              <div class="w-24 h-24 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold border-4 border-white shadow-lg" style="background:#507d2a">RS</div>
+              <button class="absolute -bottom-1 -right-1 w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center shadow-sm hover:bg-gray-50">
+                <svg class="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3"/></svg>
+              </button>
+            </div>
+            <div class="flex gap-2 mb-1">
+              <span class="text-[11px] font-bold px-3 py-1 rounded-full text-white" style="background:#507d2a">Sales Executive</span>
+              <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-700">South India Region</span>
+            </div>
+          </div>
+          <div class="mt-3">
+            <h2 class="text-[20px] font-extrabold text-gray-900">Ravi Sharma</h2>
+            <div class="flex items-center gap-4 mt-1.5 text-[13px] text-gray-500">
+              <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>ravi.sharma@company.com</span>
+              <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>+91 98765 43210</span>
+              <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Bengaluru, Karnataka</span>
+              <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Joined Jan 2022</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Nav -->
+      <div class="flex gap-1.5 mb-5 bg-white rounded-2xl p-1.5 card-s w-fit">
+        <button onclick="showPTab('personal')" class="tab-btn active" id="ptab-personal">Personal Info</button>
+        <button onclick="showPTab('perf')" class="tab-btn" id="ptab-perf">Performance</button>
+        <button onclick="showPTab('notif')" class="tab-btn" id="ptab-notif">Notifications</button>
+        <button onclick="showPTab('security')" class="tab-btn" id="ptab-security">Security</button>
+        <button onclick="showPTab('prefs')" class="tab-btn" id="ptab-prefs">Preferences</button>
+      </div>
+
+      <!-- PERSONAL INFO TAB -->
+      <div id="pcontent-personal" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- Left: Edit form -->
+        <div class="col-span-2 flex flex-col gap-4">
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-4">Personal Information</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div><p class="field-label">First Name</p><input type="text" value="Ravi"/></div>
+              <div><p class="field-label">Last Name</p><input type="text" value="Sharma"/></div>
+              <div><p class="field-label">Email Address</p><input type="email" value="ravi.sharma@company.com"/></div>
+              <div><p class="field-label">Mobile</p><input type="tel" value="+91 98765 43210"/></div>
+              <div><p class="field-label">Department</p>
+                <select><option selected>Sales</option><option>Delivery</option><option>Support</option><option>Marketing</option><option>Finance</option></select>
+              </div>
+              <div><p class="field-label">Region / Territory</p>
+                <select><option selected>South India</option><option>North India</option><option>West India</option><option>East India</option><option>Pan India</option></select>
+              </div>
+              <div class="col-span-2"><p class="field-label">Office Location</p><input type="text" value="Prestige Tech Park, Bengaluru – 560 103"/></div>
+              <div class="col-span-2"><p class="field-label">Bio / About</p><textarea rows="3" class="resize-none">Senior Sales Executive with 8+ years in IT services sales across cloud, managed services and SAP. Focused on Tier 1 IT accounts in South India.</textarea></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-4">Work Details</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div><p class="field-label">Employee ID</p><input type="text" value="EMP-20220148" class="bg-gray-100 text-gray-500 cursor-not-allowed" readonly/></div>
+              <div><p class="field-label">Role</p><input type="text" value="Sales Executive" class="bg-gray-100 text-gray-500 cursor-not-allowed" readonly/></div>
+              <div><p class="field-label">Reports To</p><input type="text" value="Suresh Menon (Sales Manager)" class="bg-gray-100 text-gray-500 cursor-not-allowed" readonly/></div>
+              <div><p class="field-label">Sales Target (FY26)</p><input type="text" value="₹3.0 Crore" class="bg-gray-100 text-gray-500 cursor-not-allowed" readonly/></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Stats + Quick Links -->
+        <div class="flex flex-col gap-4">
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-3">My Q2 Performance</p>
+            <div class="flex flex-col gap-3">
+              <div>
+                <div class="flex justify-between text-[12px] mb-1"><span class="text-gray-500">Revenue Closed</span><span class="font-bold" style="color:#507d2a">₹38L</span></div>
+                <div class="w-full h-2 bg-gray-100 rounded-full"><div class="h-2 rounded-full" style="width:51%;background:#507d2a"></div></div>
+                <p class="text-[11px] text-gray-400 mt-0.5">vs ₹75L target · 51%</p>
+              </div>
+              <div>
+                <div class="flex justify-between text-[12px] mb-1"><span class="text-gray-500">Leads Converted</span><span class="font-bold text-gray-800">12/38</span></div>
+                <div class="w-full h-2 bg-gray-100 rounded-full"><div class="h-2 rounded-full bg-blue-400" style="width:32%"></div></div>
+                <p class="text-[11px] text-gray-400 mt-0.5">32% conversion rate</p>
+              </div>
+              <div>
+                <div class="flex justify-between text-[12px] mb-1"><span class="text-gray-500">Pipeline Created</span><span class="font-bold text-gray-800">₹1.8Cr</span></div>
+                <div class="w-full h-2 bg-gray-100 rounded-full"><div class="h-2 rounded-full bg-purple-400" style="width:72%"></div></div>
+                <p class="text-[11px] text-gray-400 mt-0.5">72% of team pipeline</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-3">Activity Summary</p>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-gray-50 rounded-xl p-3 text-center"><p class="text-[22px] font-extrabold text-gray-900">142</p><p class="text-[11px] text-gray-400 mt-0.5">Calls made</p></div>
+              <div class="bg-gray-50 rounded-xl p-3 text-center"><p class="text-[22px] font-extrabold text-gray-900">87</p><p class="text-[11px] text-gray-400 mt-0.5">Emails sent</p></div>
+              <div class="bg-gray-50 rounded-xl p-3 text-center"><p class="text-[22px] font-extrabold text-gray-900">24</p><p class="text-[11px] text-gray-400 mt-0.5">Meetings</p></div>
+              <div class="bg-gray-50 rounded-xl p-3 text-center"><p class="text-[22px] font-extrabold text-gray-900">18</p><p class="text-[11px] text-gray-400 mt-0.5">Demos given</p></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-3">Quick Links</p>
+            <div class="flex flex-col gap-1.5">
+              <a href="02-leads.html" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 text-[13px] font-medium text-gray-700">
+                <span>My Leads (38)</span>
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <a href="05-pipeline.html" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 text-[13px] font-medium text-gray-700">
+                <span>My Pipeline (₹4.2Cr)</span>
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <a href="06-tickets.html" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 text-[13px] font-medium text-gray-700">
+                <span>Assigned Tickets (4)</span>
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTIFICATIONS TAB -->
+      <div id="pcontent-notif" class="hidden">
+        <div class="bg-white rounded-2xl card-s p-5 max-w-2xl">
+          <p class="font-bold text-gray-900 mb-1">Notification Preferences</p>
+          <p class="text-[12px] text-gray-400 mb-5">Choose how and when you receive alerts</p>
+
+          <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-3">In-App Notifications</p>
+          <div class="flex flex-col divide-y divide-gray-100">
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">New lead assigned</p><p class="text-[12px] text-gray-400 mt-0.5">When a lead is assigned to you</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">Deal stage changed</p><p class="text-[12px] text-gray-400 mt-0.5">When an opportunity moves stages</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">SLA breach alerts</p><p class="text-[12px] text-gray-400 mt-0.5">When a ticket is about to breach SLA</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">Contract renewal reminders</p><p class="text-[12px] text-gray-400 mt-0.5">30 / 14 / 7 days before expiry</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">Task due reminders</p><p class="text-[12px] text-gray-400 mt-0.5">1 day and 1 hour before due</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+          </div>
+
+          <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-3 mt-5">Email Notifications</p>
+          <div class="flex flex-col divide-y divide-gray-100">
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">Daily digest</p><p class="text-[12px] text-gray-400 mt-0.5">Morning summary of your pipeline &amp; tasks</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">Weekly performance report</p><p class="text-[12px] text-gray-400 mt-0.5">Every Monday at 9:00 AM</p></div>
+              <div class="toggle" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">Invoice payment alerts</p><p class="text-[12px] text-gray-400 mt-0.5">When an invoice is paid or overdue</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+          </div>
+
+          <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-3 mt-5">WhatsApp / SMS</p>
+          <div class="flex flex-col divide-y divide-gray-100">
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">Critical SLA breaches</p><p class="text-[12px] text-gray-400 mt-0.5">P1 tickets only</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="flex items-center justify-between py-3.5">
+              <div><p class="text-[13px] font-semibold text-gray-800">Deal won notifications</p><p class="text-[12px] text-gray-400 mt-0.5">Celebrate with the team 🎉</p></div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+          </div>
+
+          <button class="mt-5 text-[13px] font-semibold text-white px-5 py-2.5 rounded-xl" style="background:#507d2a">Save Notification Preferences</button>
+        </div>
+      </div>
+
+      <!-- SECURITY TAB -->
+      <div id="pcontent-security" class="hidden">
+        <div class="max-w-2xl flex flex-col gap-4">
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-4">Change Password</p>
+            <div class="flex flex-col gap-3">
+              <div><p class="field-label">Current Password</p><input type="text" value="••••••••••" class="font-mono"/></div>
+              <div><p class="field-label">New Password</p><input type="text" placeholder="Min. 8 characters"/></div>
+              <div><p class="field-label">Confirm New Password</p><input type="text" placeholder="Re-enter new password"/></div>
+            </div>
+            <div class="mt-3 p-3 bg-gray-50 rounded-xl text-[12px] text-gray-600">
+              <p class="font-semibold text-gray-700 mb-1.5">Password must contain:</p>
+              <div class="grid grid-cols-2 gap-1">
+                <span class="flex items-center gap-1.5 text-green-600"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg>At least 8 characters</span>
+                <span class="flex items-center gap-1.5 text-green-600"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg>Uppercase letter</span>
+                <span class="flex items-center gap-1.5 text-gray-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Special character</span>
+                <span class="flex items-center gap-1.5 text-gray-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Number</span>
+              </div>
+            </div>
+            <button class="mt-4 text-[13px] font-semibold text-white px-5 py-2.5 rounded-xl" style="background:#507d2a">Update Password</button>
+          </div>
+
+          <div class="bg-white rounded-2xl card-s p-5">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <p class="font-bold text-gray-900">Two-Factor Authentication</p>
+                <p class="text-[12px] text-gray-400 mt-0.5">Add an extra layer of security to your account</p>
+              </div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="p-3.5 rounded-xl" style="background:#f0faf0;border:1px solid #c6e6a8">
+              <p class="text-[12px] font-semibold text-green-800">✓ 2FA is enabled via Authenticator App</p>
+              <p class="text-[12px] text-green-700 mt-0.5">Using Google Authenticator · Last used Jun 9, 9:15 AM</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-4">Active Sessions</p>
+            <div class="flex flex-col divide-y divide-gray-100">
+              <div class="flex items-center justify-between py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-blue-100 rounded-xl flex items-center justify-center"><svg class="w-4.5 h-4.5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                  <div><p class="text-[13px] font-semibold text-gray-800">Chrome · Windows 11</p><p class="text-[11px] text-gray-400">Bengaluru, India · Current session</p></div>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full" style="background:#dcfce7;color:#15803d">Active Now</span>
+              </div>
+              <div class="flex items-center justify-between py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-gray-100 rounded-xl flex items-center justify-center"><svg class="w-4.5 h-4.5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+                  <div><p class="text-[13px] font-semibold text-gray-800">Safari · iPhone 14</p><p class="text-[11px] text-gray-400">Bengaluru, India · Jun 9, 7:30 AM</p></div>
+                </div>
+                <button class="text-[11px] font-semibold text-red-600 hover:underline">Revoke</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREFERENCES TAB -->
+      <div id="pcontent-prefs" class="hidden">
+        <div class="bg-white rounded-2xl card-s p-5 max-w-2xl">
+          <p class="font-bold text-gray-900 mb-4">Display &amp; Regional Preferences</p>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div><p class="field-label">Language</p><select><option selected>English (India)</option><option>Hindi</option><option>Tamil</option></select></div>
+            <div><p class="field-label">Currency</p><select><option selected>INR (₹)</option><option>USD ($)</option></select></div>
+            <div><p class="field-label">Date Format</p><select><option selected>DD MMM YYYY</option><option>MM/DD/YYYY</option><option>YYYY-MM-DD</option></select></div>
+            <div><p class="field-label">Time Format</p><select><option selected>12-hour (AM/PM)</option><option>24-hour</option></select></div>
+            <div><p class="field-label">Time Zone</p><select><option selected>IST (UTC+5:30)</option></select></div>
+            <div><p class="field-label">Week Starts On</p><select><option selected>Monday</option><option>Sunday</option></select></div>
+          </div>
+
+          <div class="border-t border-gray-100 pt-4 mt-2">
+            <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-3">Dashboard Layout</p>
+            <div class="flex flex-col divide-y divide-gray-100">
+              <div class="flex items-center justify-between py-3">
+                <div><p class="text-[13px] font-semibold text-gray-800">Compact sidebar</p><p class="text-[12px] text-gray-400 mt-0.5">Show icons only, expand on hover</p></div>
+                <div class="toggle" onclick="this.classList.toggle('on')"></div>
+              </div>
+              <div class="flex items-center justify-between py-3">
+                <div><p class="text-[13px] font-semibold text-gray-800">Show revenue in Lakhs (L)</p><p class="text-[12px] text-gray-400 mt-0.5">Display ₹82L instead of ₹8,200,000</p></div>
+                <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+              </div>
+              <div class="flex items-center justify-between py-3">
+                <div><p class="text-[13px] font-semibold text-gray-800">Auto-refresh dashboard</p><p class="text-[12px] text-gray-400 mt-0.5">Refresh data every 5 minutes</p></div>
+                <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+              </div>
+            </div>
+          </div>
+          <button class="mt-4 text-[13px] font-semibold text-white px-5 py-2.5 rounded-xl" style="background:#507d2a">Save Preferences</button>
+        </div>
+      </div>
+
+      <!-- PERFORMANCE TAB -->
+      <div id="pcontent-perf" class="hidden">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-4">Q2 FY26 Targets vs Actuals</p>
+            <div class="flex flex-col gap-4">
+              <div>
+                <div class="flex justify-between text-[13px] mb-1.5"><span class="text-gray-600 font-semibold">Revenue Closed</span><span class="font-bold text-gray-900">₹38L <span class="text-gray-400 font-normal">/ ₹75L</span></span></div>
+                <div class="w-full h-3 bg-gray-100 rounded-full"><div class="h-3 rounded-full" style="width:51%;background:#507d2a"></div></div>
+                <p class="text-[11px] text-gray-400 mt-1">51% of target</p>
+              </div>
+              <div>
+                <div class="flex justify-between text-[13px] mb-1.5"><span class="text-gray-600 font-semibold">Leads Converted</span><span class="font-bold text-gray-900">12 <span class="text-gray-400 font-normal">/ 20</span></span></div>
+                <div class="w-full h-3 bg-gray-100 rounded-full"><div class="h-3 rounded-full bg-blue-400" style="width:60%"></div></div>
+                <p class="text-[11px] text-gray-400 mt-1">60% of target</p>
+              </div>
+              <div>
+                <div class="flex justify-between text-[13px] mb-1.5"><span class="text-gray-600 font-semibold">New Accounts Opened</span><span class="font-bold text-gray-900">2 <span class="text-gray-400 font-normal">/ 3</span></span></div>
+                <div class="w-full h-3 bg-gray-100 rounded-full"><div class="h-3 rounded-full bg-amber-400" style="width:67%"></div></div>
+                <p class="text-[11px] text-gray-400 mt-1">67% of target</p>
+              </div>
+              <div>
+                <div class="flex justify-between text-[13px] mb-1.5"><span class="text-gray-600 font-semibold">CSAT Score</span><span class="font-bold text-gray-900">4.7 <span class="text-gray-400 font-normal">/ 4.5 target</span></span></div>
+                <div class="w-full h-3 bg-gray-100 rounded-full"><div class="h-3 rounded-full bg-green-500" style="width:100%"></div></div>
+                <p class="text-[11px] font-semibold mt-1" style="color:#507d2a">Above target ✓</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl card-s p-5">
+            <p class="font-bold text-gray-900 mb-4">Recent Achievements</p>
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start gap-3 p-3.5 rounded-xl" style="background:#f0faf0;border:1px solid #c6e6a8">
+                <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-[18px]">🏆</div>
+                <div><p class="text-[13px] font-semibold text-gray-900">Top Performer — May 2026</p><p class="text-[12px] text-gray-500 mt-0.5">Highest pipeline created in the South India team</p></div>
+              </div>
+              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-blue-50 border border-blue-100">
+                <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-[18px]">⭐</div>
+                <div><p class="text-[13px] font-semibold text-gray-900">HCL ERP Deal — ₹38L Won</p><p class="text-[12px] text-gray-500 mt-0.5">Largest single deal closed this quarter</p></div>
+              </div>
+              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-amber-50 border border-amber-100">
+                <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-[18px]">🎯</div>
+                <div><p class="text-[13px] font-semibold text-gray-900">3-Year Infosys Contract Renewed</p><p class="text-[12px] text-gray-500 mt-0.5">₹2.4Cr ACV renewal closed Mar 2026</p></div>
+              </div>
+              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-purple-50 border border-purple-100">
+                <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-[18px]">📈</div>
+                <div><p class="text-[13px] font-semibold text-gray-900">Q1 FY26 — 112% of Target</p><p class="text-[12px] text-gray-500 mt-0.5">₹84L vs ₹75L target</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /max-w -->
+  </main>
+</div>
+</div>
+
+<script>
+function showPTab(name) {
+  ['personal','perf','notif','security','prefs'].forEach(t => {
+    document.getElementById('pcontent-'+t)?.classList.add('hidden');
+    const btn = document.getElementById('ptab-'+t);
+    if(btn){ btn.classList.remove('active'); }
+  });
+  document.getElementById('pcontent-'+name)?.classList.remove('hidden');
+  document.getElementById('ptab-'+name)?.classList.add('active');
+}
+
+function saveProfile() {
+  const btn = event.currentTarget;
+  btn.textContent = '✓ Saved!';
+  btn.style.background = '#2563eb';
+  setTimeout(() => { btn.innerHTML = '<svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg>Save Changes'; btn.style.background = '#507d2a'; }, 2000);
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,501 @@
+CRM APPLICATION
+Software Requirements Specification (SRS)
+For IT Service Company
+Version: 1.0
+Date: June 2026
+Status: Draft
+1. Introduction
+1.1 Purpose
+This Software Requirements Specification (SRS) document defines the functional and non-functional requirements for a custom Customer Relationship Management (CRM) application tailored for an IT service company. It serves as the primary reference for developers, designers, testers, and stakeholders involved in the design, development, and deployment of the system.
+1.2 Scope
+The CRM application will support end-to-end management of customer relationships for an IT service organization. The system will cover the following key areas:
+Lead capture and qualification from multiple channels
+Client account and contact management
+IT service opportunity and deal tracking
+Project and service delivery management
+Support ticket and SLA management
+Communication and activity logging
+Invoicing and contract management
+Analytics, reporting, and dashboards
+Integration with third-party IT tools (email, Jira, Slack, etc.)
+1.3 Definitions & Acronyms
+Term / Acronym
+Definition
+CRM
+Customer Relationship Management
+SRS
+Software Requirements Specification
+SLA
+Service Level Agreement
+MQL
+Marketing Qualified Lead
+SQL
+Sales Qualified Lead
+POC
+Point of Contact
+KPI
+Key Performance Indicator
+RBAC
+Role-Based Access Control
+API
+Application Programming Interface
+2FA
+Two-Factor Authentication
+MSP
+Managed Service Provider
+AMS
+Application Managed Services
+1.4 Intended Audience
+Product Owner / Project Manager
+Software Development Team (Frontend, Backend, DevOps)
+QA & Testing Team
+UI/UX Designers
+Business Stakeholders and Sales Leadership
+IT Security and Compliance Team
+2. Overall Description
+2.1 Product Perspective
+The CRM application will be a web-based, cloud-hosted platform accessible via modern browsers and mobile devices. It will act as the central hub for all customer-facing and internal sales operations of the IT service company, integrating with email clients, project management tools, accounting software, and communication platforms.
+2.2 Target Users & Roles
+Role
+Description
+Primary Modules
+Sales Executive
+Manages leads, opportunities, and client communication
+Leads, Pipeline, Contacts, Activities
+Account Manager
+Handles ongoing client accounts and renewals
+Accounts, Contracts, Service Requests
+Support Engineer
+Resolves tickets and manages SLAs
+Tickets, SLA, Knowledge Base
+Project Manager
+Oversees delivery of IT projects
+Projects, Tasks, Milestones
+Finance Team
+Manages invoices and billing
+Invoicing, Contracts, Reports
+Marketing Team
+Manages campaigns and lead generation
+Campaigns, Leads, Analytics
+CRM Admin
+Configures system, manages users and workflows
+All modules + Admin settings
+Management / C-Suite
+Reviews dashboards and KPIs
+Reports, Dashboards, Analytics
+2.3 Operating Environment
+Platform: Cloud-hosted (AWS / Azure / GCP)
+Frontend: Web browser (Chrome, Firefox, Edge, Safari) + responsive mobile view
+Backend: RESTful API with microservices architecture
+Database: Relational (PostgreSQL) + optional NoSQL for logs/analytics
+Authentication: OAuth 2.0 / SSO with 2FA support
+Deployment: Docker containers via CI/CD pipeline
+2.4 Assumptions & Constraints
+The company already uses Microsoft 365 or Google Workspace for email
+Initial deployment will support up to 200 concurrent users
+All data must reside within India (data residency requirement)
+The system must comply with ISO/IEC 27001 security standards
+Mobile app (iOS/Android) is a Phase 2 deliverable
+3. Functional Requirements
+3.1 Lead Management
+3.1.1 Lead Capture
+Capture leads from web forms, email, LinkedIn, referrals, and manual entry
+Auto-assign leads to sales reps based on territory, service type, or round-robin rules
+Detect and merge duplicate leads automatically
+Capture UTM parameters and lead source tracking
+3.1.2 Lead Qualification
+Lead scoring engine based on configurable criteria (company size, industry, budget, engagement)
+Categorize leads as MQL, SQL, or Unqualified
+Support BANT (Budget, Authority, Need, Timeline) qualification framework
+Visual Kanban board to move leads through qualification stages
+3.1.3 Lead Conversion
+One-click conversion of qualified lead to Account, Contact, and Opportunity
+Preserve full history and activities during conversion
+3.2 Contact & Account Management
+3.2.1 Contact Records
+Store contact details: name, designation, email, phone, LinkedIn, timezone
+Associate multiple contacts to a single account
+Tag contacts with roles: Decision Maker, Influencer, End User, Technical POC
+Log interaction history, emails, calls, and notes per contact
+3.2.2 Account (Company) Records
+Maintain company profile: name, industry, size, location, website, annual revenue
+Track account health score based on activity and engagement
+Support parent-child account hierarchy (e.g., HQ and subsidiaries)
+Associate all related contacts, deals, tickets, and documents to the account
+Define account tier: Strategic, Enterprise, Mid-Market, SMB
+3.3 Opportunity & Sales Pipeline
+3.3.1 Deal Management
+Create opportunities with fields: name, value, expected close date, service type, stage
+Link opportunities to contacts and accounts
+Support multiple deal pipelines (e.g., New Business, Renewals, Upsell)
+Track probability of winning per stage
+3.3.2 Pipeline View
+Interactive Kanban and list views for deal stages
+Drag-and-drop to move deals across stages
+Color-code deals by value, age, or priority
+Revenue forecasting based on weighted pipeline value
+3.3.3 Proposal & Quote Management
+Generate service proposals with itemized pricing from product/service catalog
+Support approval workflows for quotes above a threshold
+Send proposals via email directly from the CRM with tracking (opened/viewed)
+Version control for proposal revisions
+3.4 Activity & Task Management
+Log calls, emails, meetings, demos, and site visits against contacts/accounts/deals
+Create tasks and reminders with due dates, priorities, and assignees
+Calendar view showing all scheduled activities
+Auto-log emails from connected mailbox (Gmail / Outlook)
+Meeting scheduler with calendar integration and video conferencing link generation
+Activity completion tracking and overdue alerts
+3.5 Service & Support Ticketing
+3.5.1 Ticket Management
+Create tickets from email, web portal, phone, or manual entry
+Categorize tickets: Incident, Service Request, Change Request, Problem
+Assign priority levels: Critical, High, Medium, Low
+Link tickets to accounts, contacts, and projects
+Internal notes and customer-visible updates on each ticket
+3.5.2 SLA Management
+Define SLA policies by ticket priority and client tier
+Track response time and resolution time against SLA targets
+Automated escalation when SLA breach is approaching
+SLA compliance reports per client and per team
+3.5.3 Knowledge Base
+Create and maintain internal KB articles for common IT issues
+Suggest relevant KB articles when creating a ticket
+Track article usage and helpfulness ratings
+3.6 Project & Delivery Management
+Create IT projects linked to deals/accounts with scope, timeline, and budget
+Manage project phases and milestones with target dates
+Assign team members to tasks with effort estimates
+Track project status: Not Started, In Progress, On Hold, Completed, Delayed
+Integrate with Jira for project task sync (bidirectional)
+Document management: attach SOWs, technical specs, and deliverables
+Generate project status reports for clients
+3.7 Contract & Renewal Management
+Manage service contracts with start/end dates, value, terms, and auto-renewal flag
+Associate contracts to accounts and deals
+Automated renewal reminders at 90, 60, and 30 days before expiry
+Contract version history and digital signature support
+Track contract amendments and change orders
+3.8 Invoicing & Revenue Tracking
+Generate invoices from deals and contracts
+Track payment status: Draft, Sent, Paid, Overdue, Cancelled
+Integrate with accounting tools (Zoho Books, QuickBooks, Tally)
+Revenue recognition reporting by month/quarter/year
+Multi-currency support with exchange rate management
+3.9 Marketing & Campaign Management
+Create and manage email marketing campaigns with segmented audience lists
+Track campaign performance: open rate, click rate, conversion rate
+Drip email sequences for lead nurturing
+Event management: webinars, tech talks, and conferences
+Campaign ROI tracking — link campaigns to resulting deals
+3.10 Communication & Collaboration
+Unified communication log per contact/account (email, call, chat, meeting)
+In-app notifications and @mention for team collaboration
+Slack / Microsoft Teams integration for deal and ticket alerts
+Email templates for sales, support, and onboarding
+Internal chat / comment threads on records
+4. Detailed Module Requirements Summary
+Module
+Req. ID
+Requirement
+Priority
+Lead Management
+LM-001
+Capture leads from 5+ sources including web forms
+Must Have
+Lead Management
+LM-002
+Automated lead scoring based on configurable rules
+Must Have
+Lead Management
+LM-003
+Duplicate lead detection and merge
+Should Have
+Contacts
+CO-001
+Store and manage contact records with custom fields
+Must Have
+Contacts
+CO-002
+Associate contacts with multiple accounts
+Must Have
+Accounts
+AC-001
+Parent-child account hierarchy support
+Should Have
+Accounts
+AC-002
+Account health score calculation
+Nice to Have
+Pipeline
+PL-001
+Multiple sales pipelines with custom stages
+Must Have
+Pipeline
+PL-002
+Revenue forecasting with weighted probability
+Must Have
+Pipeline
+PL-003
+Proposal generation with approval workflow
+Must Have
+Ticketing
+TK-001
+Multi-channel ticket creation (email, portal, manual)
+Must Have
+Ticketing
+TK-002
+SLA policy enforcement with escalation
+Must Have
+Ticketing
+TK-003
+Knowledge base with article suggestions
+Should Have
+Projects
+PR-001
+Project management with phases and milestones
+Must Have
+Projects
+PR-002
+Bidirectional Jira integration
+Should Have
+Contracts
+CT-001
+Contract lifecycle with renewal reminders
+Must Have
+Invoicing
+IN-001
+Invoice generation from deals/contracts
+Must Have
+Invoicing
+IN-002
+Accounting software integration
+Should Have
+Marketing
+MK-001
+Email campaign management with analytics
+Should Have
+Analytics
+AN-001
+Pre-built and custom dashboards for each role
+Must Have
+Analytics
+AN-002
+Export reports to PDF and Excel
+Must Have
+Admin
+AD-001
+Role-based access control with field-level permissions
+Must Have
+Admin
+AD-002
+Custom fields, layouts, and workflow automation
+Must Have
+5. Non-Functional Requirements
+5.1 Performance
+Page load time: under 2 seconds for all primary views on standard broadband
+API response time: 95th percentile under 500ms
+Support 200 concurrent users without performance degradation
+Bulk operations (import/export of 10,000+ records) must complete within 5 minutes
+5.2 Security
+Role-Based Access Control (RBAC) with field-level and record-level permissions
+Two-Factor Authentication (2FA) via OTP or authenticator app
+All data encrypted at rest (AES-256) and in transit (TLS 1.3)
+Audit logs for all data modifications, login events, and admin actions
+OWASP Top 10 vulnerability mitigation
+Penetration testing before go-live and annually thereafter
+Session timeout after 30 minutes of inactivity
+5.3 Reliability & Availability
+System uptime SLA: 99.9% (excluding planned maintenance)
+Automated daily database backups with 30-day retention
+Disaster recovery RTO: 4 hours, RPO: 1 hour
+Health monitoring with automated alerting on service failures
+5.4 Scalability
+Architecture must support horizontal scaling to handle user growth up to 1,000 users
+Database designed to handle up to 10 million records without performance loss
+Microservices design to allow independent scaling of high-load modules
+5.5 Usability
+Responsive design supporting desktop, tablet, and mobile browsers
+Consistent UI/UX following WCAG 2.1 AA accessibility standards
+Onboarding wizard for new users with contextual help tooltips
+Maximum 3 clicks to reach any core function from the home dashboard
+5.6 Maintainability
+Codebase must follow clean architecture with at least 80% unit test coverage
+API-first design with Swagger/OpenAPI documentation
+Feature flags for controlled rollout of new functionality
+Centralized logging (ELK stack or equivalent) for debugging
+6. System Integrations
+Integration
+Type
+Purpose
+Priority
+Gmail / Outlook
+Email sync
+Auto-log emails, send from CRM
+Must Have
+Google Calendar / Outlook Calendar
+Calendar sync
+Sync meetings and tasks
+Must Have
+Jira / Azure DevOps
+Project tools
+Bidirectional ticket and task sync
+Must Have
+Slack / Microsoft Teams
+Communication
+Deal and ticket alerts, @mentions
+Must Have
+Zoho Books / QuickBooks
+Accounting
+Invoice sync and payment status
+Should Have
+LinkedIn Sales Navigator
+Prospecting
+Import contacts and company data
+Should Have
+Twilio / MSG91
+SMS / Telephony
+Outbound calls, SMS notifications
+Should Have
+Mailchimp / SendGrid
+Email marketing
+Campaign management and analytics
+Nice to Have
+DocuSign / Zoho Sign
+eSignature
+Contract signing workflow
+Should Have
+Power BI / Google Looker
+BI tools
+Advanced analytics and reporting
+Nice to Have
+Zapier / Make (Integromat)
+Automation
+Connect to 500+ third-party apps
+Nice to Have
+7. UI / UX Requirements
+7.1 General Design Principles
+Clean, minimal interface inspired by modern SaaS tools (Notion, Linear, HubSpot)
+Dark mode and light mode support with user preference saved per account
+Consistent color-coding: green for won/active, red for critical/lost, amber for at-risk
+Collapsible sidebar navigation with role-based menu visibility
+7.2 Key Screens
+Home Dashboard — personalized widgets: My Tasks, Pipeline Summary, Recent Activities, KPIs
+Lead Board — Kanban with drag-and-drop columns per qualification stage
+Account 360 View — full account profile with all associated contacts, deals, tickets, contracts
+Deal Detail — timeline view of all activities, documents, notes, and stage history
+Ticket Queue — filterable list with SLA countdown timers and priority flags
+Analytics Dashboard — role-specific pre-built reports with drill-down capability
+Admin Panel — user management, workflow builder, field configurator, audit logs
+7.3 Mobile Requirements (Phase 1 — Responsive Web)
+Fully responsive layouts for screens 375px and wider
+Core actions accessible on mobile: create/view records, log activity, update ticket status
+Push notifications via browser for task reminders and SLA alerts
+8. Data Requirements
+8.1 Data Migration
+Support import of contacts, accounts, and deals from CSV / Excel
+Migration wizard with field mapping, validation, and error reporting
+Support one-time migration from legacy tools (Salesforce, Zoho, HubSpot) via API
+8.2 Data Retention & Archiving
+Active records retained indefinitely while account is active
+Deleted records moved to recycle bin for 30-day recovery window
+Archived accounts retained for 7 years to meet compliance requirements
+Automated data archiving for records older than 5 years
+8.3 Data Compliance
+Full GDPR / PDPB (India Personal Data Protection Bill) compliance
+Data export on request (right to portability)
+Ability to anonymize or delete individual records on request (right to erasure)
+Consent management for marketing communication opt-ins
+9. Reporting & Analytics Requirements
+9.1 Pre-Built Reports
+Report Name
+Target Role
+Description
+Sales Pipeline Summary
+Sales Manager
+Deal count, value by stage, expected close dates
+Lead Conversion Funnel
+Sales / Marketing
+Leads by source, stage conversion rates
+Revenue Forecast
+Management
+Weighted pipeline value by month/quarter
+Rep Performance
+Sales Manager
+Activities, deals won/lost, revenue per rep
+Account Health Report
+Account Manager
+Engagement score, open tickets, renewal dates
+SLA Compliance Report
+Support Manager
+SLA met/breached by priority and client
+Ticket Volume Trends
+Support Manager
+Ticket count over time by category and client
+Campaign ROI Report
+Marketing
+Leads and revenue attributed to each campaign
+Contract Renewal Pipeline
+Account Manager
+Contracts expiring in 30/60/90 days
+Invoice Aging Report
+Finance
+Outstanding invoices by age bucket
+9.2 Custom Reports
+Drag-and-drop report builder with any module's fields
+Support filters, grouping, and aggregation functions (sum, average, count, min, max)
+Schedule reports for automated email delivery (daily, weekly, monthly)
+Export to PDF, Excel, and CSV
+10. Implementation Phases & Timeline
+Phase
+Duration
+Deliverables
+Phase 1 — Foundation
+8 weeks
+Contacts, Accounts, Lead Management, Pipeline, Activity Tracking, User Auth & RBAC
+Phase 2 — Service Ops
+6 weeks
+Ticketing, SLA Management, Knowledge Base, Basic Reporting, Email Integration
+Phase 3 — Delivery
+6 weeks
+Project Management, Contract Management, Jira Integration, Invoicing
+Phase 4 — Growth
+4 weeks
+Marketing Campaigns, Advanced Analytics, Slack/Teams Integration, Dashboards
+Phase 5 — Scale
+4 weeks
+Mobile Optimization, Automation Builder, Audit Logs, Accounting Integration, UAT & Go-Live
+Total estimated development timeline: 28 weeks (7 months) from project kick-off, subject to change based on resource availability and scope finalization.
+11. Acceptance Criteria
+11.1 Functional Acceptance
+All Must Have requirements in Section 3 implemented and tested
+Zero Critical or High severity bugs in production release
+All third-party integrations (email, calendar, Jira) verified end-to-end
+Data migration completed with less than 0.1% error rate
+11.2 Performance Acceptance
+Load test confirms system handles 200 concurrent users with page load < 2 seconds
+API response time P95 < 500ms under load
+11.3 Security Acceptance
+Penetration test passed with no Critical or High vulnerabilities
+2FA, RBAC, and audit logging functional for all roles
+Data encryption verified at rest and in transit
+11.4 UAT Sign-Off
+Signed UAT approval from Sales Lead, Support Lead, and IT Manager
+Training documentation and video walkthroughs delivered
+Helpdesk and runbook documentation handed over to the operations team
+12. Appendix
+12.1 Document Revision History
+Version
+Date
+Author
+Changes
+1.0
+June 2026
+Product Team
+Initial draft
+12.2 Reference Documents
+IT Service Company — Business Process Documentation v2.1
+OWASP Top 10 Security Guidelines (2023 edition)
+ISO/IEC 27001 Information Security Management Standard
+India Personal Data Protection Bill (PDPB) Compliance Guidelines
+WCAG 2.1 Accessibility Guidelines
