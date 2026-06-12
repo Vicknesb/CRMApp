@@ -5,7 +5,7 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `37 / 266` tickets · `3 / 22` epics complete.
+**Overall:** `92 / 266` tickets · `3 / 22` epics complete.
 
 ---
 
@@ -53,79 +53,79 @@
 - [x] AUTH-9 · SPA auth (login/register/2FA, guard, context)
 - [x] AUTH-10 · ✔ Check — Auth module-wide
 
-## ☐ EPIC-LEAD · Lead Management (0/16)
+## ☐ EPIC-LEAD · Lead Management (13/16)
 - [x] LEAD-1 · Lead schema (Lead, LeadSource, LeadScoreRule)
-- [ ] LEAD-2 · Lead Pydantic/Zod schemas
-- [ ] LEAD-3 · Lead CRUD API
-- [ ] LEAD-4 · Multi-source capture + UTM
-- [ ] LEAD-5 · Duplicate detection & merge
-- [ ] LEAD-6 · Lead scoring engine
-- [ ] LEAD-7 · Qualification (MQL/SQL/BANT)
-- [ ] LEAD-8 · Auto-assignment (territory/round-robin)
-- [ ] LEAD-9 · One-click conversion (Account+Contact+Opportunity)
-- [ ] LEAD-10 · Frontend hooks
-- [ ] LEAD-11 · UI: Lead list page
-- [ ] LEAD-12 · UI: Lead create/edit form
+- [x] LEAD-2 · Lead Pydantic/Zod schemas
+- [x] LEAD-3 · Lead CRUD API
+- [x] LEAD-4 · Multi-source capture + UTM
+- [x] LEAD-5 · Duplicate detection & merge
+- [x] LEAD-6 · Lead scoring engine
+- [x] LEAD-7 · Qualification (MQL/SQL/BANT)
+- [x] LEAD-8 · Auto-assignment (territory/round-robin)
+- [x] LEAD-9 · One-click conversion (Account+Contact+Opportunity)
+- [x] LEAD-10 · Frontend hooks
+- [x] LEAD-11 · UI: Lead list page
+- [x] LEAD-12 · UI: Lead create/edit form
 - [ ] LEAD-13 · UI: Lead Kanban board
 - [ ] LEAD-14 · UI: Lead detail + score panel
 - [ ] LEAD-15 · Seed/fixtures
 - [ ] LEAD-16 · ✔ Check — Lead module-wide
 
-## ☐ EPIC-CONT · Contact Management (0/11)
+## ☐ EPIC-CONT · Contact Management (8/11)
 - [x] CONT-1 · Contact schema (Contact, ContactRole, Interaction)
-- [ ] CONT-2 · Schemas (Pydantic/Zod)
-- [ ] CONT-3 · Contact CRUD API
-- [ ] CONT-4 · Multi-account association
-- [ ] CONT-5 · Interaction/history logging
-- [ ] CONT-6 · Frontend hooks
-- [ ] CONT-7 · UI: Contact list + detail panel
-- [ ] CONT-8 · UI: Contact form
+- [x] CONT-2 · Schemas (Pydantic/Zod)
+- [x] CONT-3 · Contact CRUD API
+- [x] CONT-4 · Multi-account association
+- [x] CONT-5 · Interaction/history logging
+- [x] CONT-6 · Frontend hooks
+- [x] CONT-7 · UI: Contact list + detail panel
+- [x] CONT-8 · UI: Contact form
 - [ ] CONT-9 · UI: Interaction timeline component
 - [ ] CONT-10 · Seed/fixtures
 - [ ] CONT-11 · ✔ Check — Contact module-wide
 
-## ☐ EPIC-ACCT · Account Management (0/12)
+## ☐ EPIC-ACCT · Account Management (9/12)
 - [x] ACCT-1 · Account schema (+hierarchy, tier, healthScore)
-- [ ] ACCT-2 · Schemas (Pydantic/Zod)
-- [ ] ACCT-3 · Account CRUD API
-- [ ] ACCT-4 · Tier management
-- [ ] ACCT-5 · Parent-child hierarchy
-- [ ] ACCT-6 · Health score calculation
-- [ ] ACCT-7 · Account 360 aggregation
-- [ ] ACCT-8 · Frontend hooks
-- [ ] ACCT-9 · UI: Account list/cards
-- [ ] ACCT-10 · UI: Account form
+- [x] ACCT-2 · Schemas (Pydantic/Zod)
+- [x] ACCT-3 · Account CRUD API
+- [x] ACCT-4 · Tier management
+- [x] ACCT-5 · Parent-child hierarchy
+- [x] ACCT-6 · Health score calculation
+- [x] ACCT-7 · Account 360 aggregation
+- [x] ACCT-8 · Frontend hooks
+- [x] ACCT-9 · UI: Account list/cards
+- [x] ACCT-10 · UI: Account form
 - [ ] ACCT-11 · UI: Account 360 view
 - [ ] ACCT-12 · ✔ Check — Account module-wide
 
-## ☐ EPIC-PIPE · Opportunity & Sales Pipeline (0/16)
+## ☐ EPIC-PIPE · Opportunity & Sales Pipeline (10/16)
 - [x] PIPE-1 · Pipeline schema (Pipeline, Stage, Opportunity, Proposal, Quote, Product)
-- [ ] PIPE-2 · Schemas (Pydantic/Zod)
-- [ ] PIPE-3 · Deal CRUD API
-- [ ] PIPE-4 · Color-coding metadata (value/age/priority)
-- [ ] PIPE-5 · Multiple pipelines + custom stages
-- [ ] PIPE-6 · Stage move + probability + history
-- [ ] PIPE-7 · Revenue forecasting (weighted)
+- [x] PIPE-2 · Schemas (Pydantic/Zod)
+- [x] PIPE-3 · Deal CRUD API
+- [x] PIPE-4 · Color-coding metadata (value/age/priority)
+- [x] PIPE-5 · Multiple pipelines + custom stages
+- [x] PIPE-6 · Stage move + probability + history
+- [x] PIPE-7 · Revenue forecasting (weighted)
 - [ ] PIPE-8 · Proposal/quote generation + approval workflow
 - [ ] PIPE-9 · Proposal email send + tracking + versioning
-- [ ] PIPE-10 · Frontend hooks
+- [x] PIPE-10 · Frontend hooks
 - [ ] PIPE-11 · UI: Kanban board
-- [ ] PIPE-12 · UI: Deal list view
-- [ ] PIPE-13 · UI: Deal form
+- [x] PIPE-12 · UI: Deal list view
+- [x] PIPE-13 · UI: Deal form
 - [ ] PIPE-14 · UI: Deal detail timeline
 - [ ] PIPE-15 · UI: Proposal builder
 - [ ] PIPE-16 · ✔ Check — Pipeline module-wide
 
-## ☐ EPIC-ACTV · Activity & Task Management (0/12)
+## ☐ EPIC-ACTV · Activity & Task Management (8/12)
 - [x] ACTV-1 · Activity/Task schema (Activity, Task, Reminder)
-- [ ] ACTV-2 · Schemas (Pydantic/Zod)
-- [ ] ACTV-3 · Activity logging API
-- [ ] ACTV-4 · Tasks & reminders API
+- [x] ACTV-2 · Schemas (Pydantic/Zod)
+- [x] ACTV-3 · Activity logging API
+- [x] ACTV-4 · Tasks & reminders API
 - [ ] ACTV-5 · Calendar feed
-- [ ] ACTV-6 · Overdue alerts + completion tracking
-- [ ] ACTV-7 · Frontend hooks
+- [x] ACTV-6 · Overdue alerts + completion tracking
+- [x] ACTV-7 · Frontend hooks
 - [ ] ACTV-8 · UI: Activity feed
-- [ ] ACTV-9 · UI: Task board
+- [x] ACTV-9 · UI: Task board
 - [ ] ACTV-10 · UI: Calendar view
 - [ ] ACTV-11 · UI: Log Activity & New Task modals
 - [ ] ACTV-12 · ✔ Check — Activity module-wide
