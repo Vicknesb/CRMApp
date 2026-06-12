@@ -14,6 +14,13 @@ import { TasksPage } from './features/activities/pages/TasksPage'
 import { TicketsListPage } from './features/tickets/pages/TicketsListPage'
 import { TicketFormPage } from './features/tickets/pages/TicketFormPage'
 import { IntegrationsPage } from './features/integrations/pages/IntegrationsPage'
+import { ProjectsListPage } from './features/projects/pages/ProjectsListPage'
+import { ProjectFormPage } from './features/projects/pages/ProjectFormPage'
+import { ProjectDetailPage } from './features/projects/pages/ProjectDetailPage'
+import { ContractsListPage } from './features/contracts/pages/ContractsListPage'
+import { ContractFormPage } from './features/contracts/pages/ContractFormPage'
+import { InvoicesListPage } from './features/invoices/pages/InvoicesListPage'
+import { InvoiceFormPage } from './features/invoices/pages/InvoiceFormPage'
 
 function PlaceholderPage({ title }: { title: string }): JSX.Element {
   return (
@@ -63,11 +70,22 @@ export function AppRoutes(): JSX.Element {
         {/* Integrations */}
         <Route path="/integrations" element={<PageShell title="Integrations"><IntegrationsPage /></PageShell>} />
 
+        {/* Projects */}
+        <Route path="/projects" element={<PageShell title="Projects"><ProjectsListPage /></PageShell>} />
+        <Route path="/projects/new" element={<PageShell title="New Project"><ProjectFormPage /></PageShell>} />
+        <Route path="/projects/:id" element={<PageShell title="Project Detail"><ProjectDetailPage /></PageShell>} />
+        <Route path="/projects/:id/edit" element={<PageShell title="Edit Project"><ProjectFormPage /></PageShell>} />
+
+        {/* Contracts */}
+        <Route path="/contracts" element={<PageShell title="Contracts"><ContractsListPage /></PageShell>} />
+        <Route path="/contracts/new" element={<PageShell title="New Contract"><ContractFormPage /></PageShell>} />
+        <Route path="/contracts/:id/edit" element={<PageShell title="Edit Contract"><ContractFormPage /></PageShell>} />
+
+        {/* Invoices */}
+        <Route path="/invoices" element={<PageShell title="Invoices"><InvoicesListPage /></PageShell>} />
+        <Route path="/invoices/new" element={<PageShell title="New Invoice"><InvoiceFormPage /></PageShell>} />
+
         {/* Placeholders for future epics */}
-        <Route path="/tickets-placeholder" element={<PlaceholderPage title="Tickets" /> />
-        <Route path="/projects" element={<PlaceholderPage title="Projects" />} />
-        <Route path="/contracts" element={<PlaceholderPage title="Contracts" />} />
-        <Route path="/invoices" element={<PlaceholderPage title="Invoices" />} />
         <Route path="/campaigns" element={<PlaceholderPage title="Campaigns" />} />
         <Route path="/analytics" element={<PlaceholderPage title="Analytics" />} />
         <Route path="/profile" element={<PlaceholderPage title="Profile" />} />

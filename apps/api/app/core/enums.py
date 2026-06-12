@@ -74,7 +74,46 @@ class ActivityType(str, Enum):
 
 
 class TaskStatus(str, Enum):
+    PENDING = "PENDING"
     OPEN = "OPEN"
     IN_PROGRESS = "IN_PROGRESS"
     COMPLETED = "COMPLETED"
     CANCELLED = "CANCELLED"
+
+
+class ProjectStatus(str, Enum):
+    PLANNING = "PLANNING"
+    ACTIVE = "ACTIVE"
+    ON_HOLD = "ON_HOLD"
+    COMPLETED = "COMPLETED"
+    CANCELLED = "CANCELLED"
+
+
+class ContractStatus(str, Enum):
+    DRAFT = "DRAFT"
+    ACTIVE = "ACTIVE"
+    EXPIRED = "EXPIRED"
+    TERMINATED = "TERMINATED"
+    RENEWED = "RENEWED"
+
+
+class InvoiceStatus(str, Enum):
+    DRAFT = "DRAFT"
+    SENT = "SENT"
+    PAID = "PAID"
+    OVERDUE = "OVERDUE"
+    CANCELLED = "CANCELLED"
+
+
+class PaymentMethod(str, Enum):
+    BANK_TRANSFER = "BANK_TRANSFER"
+    CHEQUE = "CHEQUE"
+    UPI = "UPI"
+    CARD = "CARD"
+    OTHER = "OTHER"
+
+
+class SignatureStatus(str, Enum):
+    PENDING = "PENDING"
+    SIGNED = "SIGNED"
+    DECLINED = "DECLINED"

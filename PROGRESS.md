@@ -5,7 +5,7 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `119 / 266` tickets · `3 / 22` epics complete.
+**Overall:** `157 / 266` tickets · `3 / 22` epics complete.
 
 ---
 
@@ -169,51 +169,51 @@
 - [x] KB-10 · Seed/fixtures
 - [ ] KB-11 · ✔ Check — KB module-wide
 
-## ☐ EPIC-PROJ · Project & Delivery (0/15)
+## ☐ EPIC-PROJ · Project & Delivery (14/15)
 - [x] PROJ-1 · Project schema (Project, Phase, Milestone, ProjectTask, Document)
-- [ ] PROJ-2 · Schemas (Pydantic/Zod)
-- [ ] PROJ-3 · Project CRUD API
-- [ ] PROJ-4 · Phases & milestones
-- [ ] PROJ-5 · Task assignment + effort + status rollup
-- [ ] PROJ-6 · Project status tracking
-- [ ] PROJ-7 · Jira bidirectional sync
-- [ ] PROJ-8 · Document management
-- [ ] PROJ-9 · Status report generation (PDF)
-- [ ] PROJ-10 · Frontend hooks
-- [ ] PROJ-11 · UI: Project list
-- [ ] PROJ-12 · UI: Project form
-- [ ] PROJ-13 · UI: Project detail (milestones/tasks/docs)
-- [ ] PROJ-14 · Seed/fixtures
+- [x] PROJ-2 · Schemas (Pydantic/Zod)
+- [x] PROJ-3 · Project CRUD API
+- [x] PROJ-4 · Phases & milestones
+- [x] PROJ-5 · Task assignment + effort + status rollup
+- [x] PROJ-6 · Project status tracking
+- [x] PROJ-7 · Jira bidirectional sync
+- [x] PROJ-8 · Document management
+- [x] PROJ-9 · Status report generation (PDF)
+- [x] PROJ-10 · Frontend hooks
+- [x] PROJ-11 · UI: Project list
+- [x] PROJ-12 · UI: Project form
+- [x] PROJ-13 · UI: Project detail (milestones/tasks/docs)
+- [x] PROJ-14 · Seed/fixtures
 - [ ] PROJ-15 · ✔ Check — Project module-wide
 
-## ☐ EPIC-CONTR · Contract & Renewal (0/13)
+## ☐ EPIC-CONTR · Contract & Renewal (12/13)
 - [x] CONTR-1 · Contract schema (Contract, Amendment, Signature)
-- [ ] CONTR-2 · Schemas (Pydantic/Zod)
-- [ ] CONTR-3 · Contract CRUD API (+auto-renew flag)
-- [ ] CONTR-4 · Renewal reminders (90/60/30)
-- [ ] CONTR-5 · Version history + eSignature
-- [ ] CONTR-6 · Amendments / change orders
-- [ ] CONTR-7 · Frontend hooks
-- [ ] CONTR-8 · UI: Contracts table
-- [ ] CONTR-9 · UI: Contract form
-- [ ] CONTR-10 · UI: Contract detail + renewal timeline
-- [ ] CONTR-11 · Seed/fixtures
-- [ ] CONTR-12 · UI: Renewal pipeline widget
+- [x] CONTR-2 · Schemas (Pydantic/Zod)
+- [x] CONTR-3 · Contract CRUD API (+auto-renew flag)
+- [x] CONTR-4 · Renewal reminders (90/60/30)
+- [x] CONTR-5 · Version history + eSignature
+- [x] CONTR-6 · Amendments / change orders
+- [x] CONTR-7 · Frontend hooks
+- [x] CONTR-8 · UI: Contracts table
+- [x] CONTR-9 · UI: Contract form
+- [x] CONTR-10 · UI: Contract detail + renewal timeline
+- [x] CONTR-11 · Seed/fixtures
+- [x] CONTR-12 · UI: Renewal pipeline widget
 - [ ] CONTR-13 · ✔ Check — Contract module-wide
 
-## ☐ EPIC-INV · Invoicing & Revenue (0/13)
+## ☐ EPIC-INV · Invoicing & Revenue (12/13)
 - [x] INV-1 · Invoice schema (Invoice, LineItem, Payment)
-- [ ] INV-2 · Schemas (Pydantic/Zod)
-- [ ] INV-3 · Invoice generation from deals/contracts
-- [ ] INV-4 · Payment status tracking
-- [ ] INV-5 · Revenue recognition + multi-currency
-- [ ] INV-6 · Accounting integration (Zoho/QuickBooks)
-- [ ] INV-7 · Frontend hooks
-- [ ] INV-8 · UI: Invoice list
-- [ ] INV-9 · UI: Invoice form (line items + GST)
-- [ ] INV-10 · UI: Invoice detail / PDF + record payment
-- [ ] INV-11 · UI: Invoice aging report
-- [ ] INV-12 · Seed/fixtures
+- [x] INV-2 · Schemas (Pydantic/Zod)
+- [x] INV-3 · Invoice generation from deals/contracts
+- [x] INV-4 · Payment status tracking
+- [x] INV-5 · Revenue recognition + multi-currency
+- [x] INV-6 · Accounting integration (Zoho/QuickBooks)
+- [x] INV-7 · Frontend hooks
+- [x] INV-8 · UI: Invoice list
+- [x] INV-9 · UI: Invoice form (line items + GST)
+- [x] INV-10 · UI: Invoice detail / PDF + record payment
+- [x] INV-11 · UI: Invoice aging report
+- [x] INV-12 · Seed/fixtures
 - [ ] INV-13 · ✔ Check — Invoicing module-wide
 
 ## ☐ EPIC-CAMP · Marketing & Campaigns (0/13)
