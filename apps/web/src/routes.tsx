@@ -13,6 +13,7 @@ import { OpportunityFormPage } from './features/pipeline/pages/OpportunityFormPa
 import { TasksPage } from './features/activities/pages/TasksPage'
 import { TicketsListPage } from './features/tickets/pages/TicketsListPage'
 import { TicketFormPage } from './features/tickets/pages/TicketFormPage'
+import { IntegrationsPage } from './features/integrations/pages/IntegrationsPage'
 
 function PlaceholderPage({ title }: { title: string }): JSX.Element {
   return (
@@ -58,6 +59,9 @@ export function AppRoutes(): JSX.Element {
         {/* Tickets */}
         <Route path="/tickets" element={<PageShell title="Tickets"><TicketsListPage /></PageShell>} />
         <Route path="/tickets/new" element={<PageShell title="New Ticket"><TicketFormPage /></PageShell>} />
+
+        {/* Integrations */}
+        <Route path="/integrations" element={<PageShell title="Integrations"><IntegrationsPage /></PageShell>} />
 
         {/* Placeholders for future epics */}
         <Route path="/tickets-placeholder" element={<PlaceholderPage title="Tickets" /> />

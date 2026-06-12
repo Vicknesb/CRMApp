@@ -16,6 +16,7 @@ from app.modules.activity.router import router as activity_router
 from app.modules.ticket.router import router as ticket_router
 from app.modules.sla.router import router as sla_router
 from app.modules.kb.router import router as kb_router
+from app.modules.integration.router import router as integration_router
 
 
 @asynccontextmanager
@@ -47,6 +48,7 @@ app.include_router(activity_router, prefix="/api/v1")
 app.include_router(ticket_router, prefix="/api/v1")
 app.include_router(sla_router, prefix="/api/v1")
 app.include_router(kb_router, prefix="/api/v1")
+app.include_router(integration_router, prefix="/api/v1")
 
 
 @app.get("/health")

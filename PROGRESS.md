@@ -274,18 +274,18 @@
 - [ ] ADMN-10 · Seed/fixtures (config samples)
 - [ ] ADMN-11 · ✔ Check — Admin module-wide
 
-## ☐ EPIC-INTG · Integration Framework (0/12)
-- [ ] INTG-1 · Connector framework (OAuth, token vault, webhooks)
-- [ ] INTG-2 · Email sync (Gmail/Outlook) — Must
-- [ ] INTG-3 · Slack/Teams — Must
-- [ ] INTG-4 · Jira / Azure DevOps — Must
-- [ ] INTG-5 · Accounting (Zoho/QuickBooks) — Should
-- [ ] INTG-6 · eSignature (DocuSign/Zoho Sign) — Should
-- [ ] INTG-7 · Email marketing (Mailchimp/SendGrid) — Nice
-- [ ] INTG-8 · Calendar sync (Google/Outlook) — Must
-- [ ] INTG-9 · LinkedIn Sales Navigator — Should
-- [ ] INTG-10 · Twilio/MSG91 SMS & telephony — Should
-- [ ] INTG-11 · UI: Integrations settings hub
+## ☐ EPIC-INTG · Integration Framework (10/12)
+- [x] INTG-1 · Connector framework (OAuth, token vault, webhooks)
+- [x] INTG-2 · Email sync (Gmail/Outlook) — Must
+- [x] INTG-3 · Slack/Teams — Must
+- [x] INTG-4 · Jira / Azure DevOps — Must
+- [x] INTG-5 · Accounting (Zoho/QuickBooks) — Should
+- [x] INTG-6 · eSignature (DocuSign/Zoho Sign) — Should
+- [x] INTG-7 · Email marketing (Mailchimp/SendGrid) — Nice
+- [x] INTG-8 · Calendar sync (Google/Outlook) — Must
+- [x] INTG-9 · LinkedIn Sales Navigator — Should
+- [x] INTG-10 · Twilio/MSG91 SMS & telephony — Should
+- [x] INTG-11 · UI: Integrations settings hub
 - [ ] INTG-12 · ✔ Check — Integrations module-wide
 
 ## ☐ EPIC-DATA · Data Management & Compliance (0/9)
