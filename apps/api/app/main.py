@@ -25,6 +25,9 @@ from app.modules.analytics.router import router as analytics_router
 from app.modules.comms.router import router as comms_router
 from app.modules.admin.router import router as admin_router
 from app.modules.data.router import router as data_router
+from app.modules.health.router import router as health_router
+from app.middleware.performance import PerformanceMiddleware
+from app.middleware.security_headers import SecurityHeadersMiddleware
 
 
 @asynccontextmanager
@@ -46,7 +49,10 @@ app.add_middleware(
 )
 
 add_exception_handlers(app)
+app.add_middleware(SecurityHeadersMiddleware)
+app.add_middleware(PerformanceMiddleware)
 
+app.include_router(health_router)
 app.include_router(auth_router)
 app.include_router(lead_router, prefix="/api/v1")
 app.include_router(contact_router, prefix="/api/v1")

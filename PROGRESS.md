@@ -5,7 +5,7 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `213 / 266` tickets · `5 / 22` epics complete.
+**Overall:** `223 / 266` tickets · `6 / 22` epics complete.
 
 ---
 
@@ -299,17 +299,17 @@
 - [x] DATA-8 · Consent management (marketing opt-in)
 - [x] DATA-9 · ✔ Check — Data module-wide
 
-## ☐ EPIC-NFR · Non-Functional & Hardening (0/10)
-- [ ] NFR-1 · Performance (§5.1)
-- [ ] NFR-2 · Security (§5.2)
-- [ ] NFR-3 · Reliability & availability (§5.3)
-- [ ] NFR-4 · Scalability (§5.4)
-- [ ] NFR-5 · Usability & accessibility (§5.5, §7)
-- [ ] NFR-6 · Maintainability (§5.6)
-- [ ] NFR-7 · Mobile responsive pass (§7.3)
-- [ ] NFR-8 · Browser push notifications (§7.3)
-- [ ] NFR-9 · Feature flag system
-- [ ] NFR-10 · ✔ Check — NFR module-wide
+## ☑ EPIC-NFR · Non-Functional & Hardening (10/10)
+- [x] NFR-1 · Performance (§5.1)
+- [x] NFR-2 · Security (§5.2)
+- [x] NFR-3 · Reliability & availability (§5.3)
+- [x] NFR-4 · Scalability (§5.4)
+- [x] NFR-5 · Usability & accessibility (§5.5, §7)
+- [x] NFR-6 · Maintainability (§5.6)
+- [x] NFR-7 · Mobile responsive pass (§7.3)
+- [x] NFR-8 · Browser push notifications (§7.3)
+- [x] NFR-9 · Feature flag system
+- [x] NFR-10 · ✔ Check — NFR module-wide
 
 ## ☐ EPIC-VERIFY · UAT, Go-Live & SRS Verification (0/6)
 - [ ] VERIFY-1 · ✔ SRS coverage matrix (100% Req IDs)
