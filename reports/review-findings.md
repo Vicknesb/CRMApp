@@ -32,3 +32,22 @@ Tests: Present (5 modules, 22 test cases), basic coverage ≥50% estimated. SRS 
 
 **Review completed:** ✅ 2026-06-12 08:58:46
 ---
+## Review Output
+
+**Verdict: ⚠️ CHANGES-NEEDED**
+
+**Critical findings:**
+
+1. **Scope mismatch (KB-10):** AC requires "sample articles seeded" (backend seed data). Commit delivers only frontend API wrapper code (`kbApi.ts`, `useKb.ts`). No backend seed script or test fixtures. → Add `apps/api/prisma/seed.py` or migration to populate sample KB articles.
+
+2. **No unit tests:** AC requires "idempotent" tests. Zero tests in commit. → Add seed idempotency tests in backend + frontend hook tests.
+
+**High findings:**
+
+3. **API envelope mismatch** (apps/web/src/features/kb/api/kbApi.ts:16–25): Return type signatures don't follow standard `{data, error, meta}` envelope. `list()` returns `Promise<{data: Article[]; meta: ...}>` but should match envelope structure. → Align with apiClient response wrapper or unwrap in hooks.
+
+**Tests:** None present. **SRS ref:** §3.4 Knowledge Base (seed data required for demos/testing).
+
+---
+
+**Attempting to append to review-findings.md...**
