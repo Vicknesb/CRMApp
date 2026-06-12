@@ -5,7 +5,7 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `193 / 266` tickets · `3 / 22` epics complete.
+**Overall:** `213 / 266` tickets · `5 / 22` epics complete.
 
 ---
 
@@ -261,18 +261,18 @@
 - [x] COMM-11 · UI: Email template manager
 - [ ] COMM-12 · ✔ Check — Comms module-wide
 
-## ☐ EPIC-ADMN · Admin & Configuration (0/11)
+## ☑ EPIC-ADMN · Admin & Configuration (11/11)
 - [x] ADMN-1 · Config schema (CustomField, Layout, Workflow, Permission)
-- [ ] ADMN-2 · RBAC field/record permission management
-- [ ] ADMN-3 · Custom fields & layouts
-- [ ] ADMN-4 · Workflow automation engine
-- [ ] ADMN-5 · Frontend hooks
-- [ ] ADMN-6 · UI: Admin panel — Users & roles
-- [ ] ADMN-7 · UI: Admin panel — Permissions & custom fields
-- [ ] ADMN-8 · UI: Admin panel — Workflows & integrations & audit
-- [ ] ADMN-9 · UI: Profile & preferences
-- [ ] ADMN-10 · Seed/fixtures (config samples)
-- [ ] ADMN-11 · ✔ Check — Admin module-wide
+- [x] ADMN-2 · RBAC field/record permission management
+- [x] ADMN-3 · Custom fields & layouts
+- [x] ADMN-4 · Workflow automation engine
+- [x] ADMN-5 · Frontend hooks
+- [x] ADMN-6 · UI: Admin panel — Users & roles
+- [x] ADMN-7 · UI: Admin panel — Permissions & custom fields
+- [x] ADMN-8 · UI: Admin panel — Workflows & integrations & audit
+- [x] ADMN-9 · UI: Profile & preferences
+- [x] ADMN-10 · Seed/fixtures (config samples)
+- [x] ADMN-11 · ✔ Check — Admin module-wide
 
 ## ☐ EPIC-INTG · Integration Framework (10/12)
 - [x] INTG-1 · Connector framework (OAuth, token vault, webhooks)
@@ -288,16 +288,16 @@
 - [x] INTG-11 · UI: Integrations settings hub
 - [ ] INTG-12 · ✔ Check — Integrations module-wide
 
-## ☐ EPIC-DATA · Data Management & Compliance (0/9)
-- [ ] DATA-1 · CSV/Excel import engine
-- [ ] DATA-2 · Legacy API migration (Salesforce/Zoho/HubSpot)
-- [ ] DATA-3 · UI: Migration wizard
-- [ ] DATA-4 · Soft-delete + recycle bin (30-day)
-- [ ] DATA-5 · Archiving (7-year retention, auto-archive >5yr)
-- [ ] DATA-6 · GDPR/PDPB: data export (portability)
-- [ ] DATA-7 · GDPR/PDPB: erasure / anonymization
-- [ ] DATA-8 · Consent management (marketing opt-in)
-- [ ] DATA-9 · ✔ Check — Data module-wide
+## ☑ EPIC-DATA · Data Management & Compliance (9/9)
+- [x] DATA-1 · CSV/Excel import engine
+- [x] DATA-2 · Legacy API migration (Salesforce/Zoho/HubSpot)
+- [x] DATA-3 · UI: Migration wizard
+- [x] DATA-4 · Soft-delete + recycle bin (30-day)
+- [x] DATA-5 · Archiving (7-year retention, auto-archive >5yr)
+- [x] DATA-6 · GDPR/PDPB: data export (portability)
+- [x] DATA-7 · GDPR/PDPB: erasure / anonymization
+- [x] DATA-8 · Consent management (marketing opt-in)
+- [x] DATA-9 · ✔ Check — Data module-wide
 
 ## ☐ EPIC-NFR · Non-Functional & Hardening (0/10)
 - [ ] NFR-1 · Performance (§5.1)

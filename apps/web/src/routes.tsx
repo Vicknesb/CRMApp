@@ -26,6 +26,10 @@ import { CampaignFormPage } from './features/campaigns/pages/CampaignFormPage'
 import { CampaignAnalyticsPage } from './features/campaigns/pages/CampaignAnalyticsPage'
 import { AnalyticsDashboardPage } from './features/analytics/pages/AnalyticsDashboardPage'
 import { NotificationCenterPage } from './features/comms/pages/NotificationCenterPage'
+import { AdminPanelPage } from './features/admin/AdminPanelPage'
+import { ProfilePage } from './features/admin/ProfilePage'
+import { ImportWizardPage } from './features/data/ImportWizardPage'
+import { RecycleBinPage } from './features/data/RecycleBinPage'
 
 function PlaceholderPage({ title }: { title: string }): JSX.Element {
   return (
@@ -102,8 +106,13 @@ export function AppRoutes(): JSX.Element {
         {/* Notifications */}
         <Route path="/notifications" element={<PageShell title="Notifications"><NotificationCenterPage /></PageShell>} />
 
-        {/* Placeholders */}
-        <Route path="/profile" element={<PlaceholderPage title="Profile" />} />
+        {/* Admin */}
+        <Route path="/admin" element={<PageShell title="Admin Panel"><AdminPanelPage /></PageShell>} />
+        <Route path="/profile" element={<PageShell title="My Profile"><ProfilePage /></PageShell>} />
+
+        {/* Data */}
+        <Route path="/data/import" element={<PageShell title="Import Data"><ImportWizardPage /></PageShell>} />
+        <Route path="/data/recycle-bin" element={<PageShell title="Recycle Bin"><RecycleBinPage /></PageShell>} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />

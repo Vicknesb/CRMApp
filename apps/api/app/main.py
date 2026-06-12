@@ -23,6 +23,8 @@ from app.modules.invoice.router import router as invoice_router
 from app.modules.campaign.router import router as campaign_router
 from app.modules.analytics.router import router as analytics_router
 from app.modules.comms.router import router as comms_router
+from app.modules.admin.router import router as admin_router
+from app.modules.data.router import router as data_router
 
 
 @asynccontextmanager
@@ -61,6 +63,8 @@ app.include_router(invoice_router, prefix="/api/v1")
 app.include_router(campaign_router, prefix="/api/v1")
 app.include_router(analytics_router, prefix="/api/v1")
 app.include_router(comms_router, prefix="/api/v1")
+app.include_router(admin_router, prefix="/api/v1")
+app.include_router(data_router, prefix="/api/v1")
 
 
 @app.get("/health")
