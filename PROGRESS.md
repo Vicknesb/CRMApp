@@ -166,7 +166,7 @@
 - [x] KB-7 · UI: KB list + category filters
 - [x] KB-8 · UI: Article editor
 - [x] KB-9 · UI: Article view + rating
-- [ ] KB-10 · Seed/fixtures
+- [x] KB-10 · Seed/fixtures
 - [ ] KB-11 · ✔ Check — KB module-wide
 
 ## ☐ EPIC-PROJ · Project & Delivery (0/15)
