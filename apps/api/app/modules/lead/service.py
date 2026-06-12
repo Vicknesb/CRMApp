@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from prisma import Prisma
 from app.core.audit import record_audit
 from app.core.enums import LeadStatus
@@ -141,7 +142,7 @@ async def convert_lead(db: Prisma, lead_id: str, body: ConvertLeadRequest, actor
 
     await repo.update_lead(db, lead_id, {
         "status": LeadStatus.CONVERTED,
-        "convertedAt": __import__("datetime").datetime.utcnow(),
+        "convertedAt": datetime.now(timezone.utc),
         "accountId": result.get("accountId"),
         "contactId": result.get("contactId"),
         "opportunityId": result.get("opportunityId"),

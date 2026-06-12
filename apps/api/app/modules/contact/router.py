@@ -62,4 +62,4 @@ async def get_interactions(contact_id: str, db: Prisma = Depends(get_db),
 async def link_account(contact_id: str, account_id: str,
                        is_primary: bool = Query(False),
                        db: Prisma = Depends(get_db), current_user=Depends(get_current_user)) -> dict:
-    return ok((await service.link_account(db, contact_id, account_id, is_primary)).__dict__)
+    return ok((await service.link_account(db, contact_id, account_id, is_primary, current_user.id)).__dict__)

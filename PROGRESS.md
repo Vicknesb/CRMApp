@@ -5,7 +5,7 @@
 >
 > Backlog detail: `tickets/epic-*.md` · Playbook: `HOW-TO-IMPLEMENT.md` · Agent: `.claude/agents/epic-implementer.md`
 
-**Overall:** `92 / 266` tickets · `3 / 22` epics complete.
+**Overall:** `119 / 266` tickets · `3 / 22` epics complete.
 
 ---
 
@@ -130,42 +130,42 @@
 - [ ] ACTV-11 · UI: Log Activity & New Task modals
 - [ ] ACTV-12 · ✔ Check — Activity module-wide
 
-## ☐ EPIC-TICK · Service Ticketing (0/11)
+## ☐ EPIC-TICK · Service Ticketing (9/11)
 - [x] TICK-1 · Ticket schema (Ticket, Category, Priority, TicketNote)
-- [ ] TICK-2 · Schemas (Pydantic/Zod)
-- [ ] TICK-3 · Ticket CRUD API (multi-channel)
-- [ ] TICK-4 · Categorization, priority, linking
-- [ ] TICK-5 · Internal/customer notes
-- [ ] TICK-6 · Frontend hooks
-- [ ] TICK-7 · UI: Ticket queue
-- [ ] TICK-8 · UI: Ticket form
+- [x] TICK-2 · Schemas (Pydantic/Zod)
+- [x] TICK-3 · Ticket CRUD API (multi-channel)
+- [x] TICK-4 · Categorization, priority, linking
+- [x] TICK-5 · Internal/customer notes
+- [x] TICK-6 · Frontend hooks
+- [x] TICK-7 · UI: Ticket queue
+- [x] TICK-8 · UI: Ticket form
 - [ ] TICK-9 · UI: Ticket detail
 - [ ] TICK-10 · Seed/fixtures
 - [ ] TICK-11 · ✔ Check — Ticketing module-wide
 
-## ☐ EPIC-SLA · SLA Management (0/11)
+## ☐ EPIC-SLA · SLA Management (9/11)
 - [x] SLA-1 · SLA schema (SLAPolicy, SLATracker)
-- [ ] SLA-2 · Schemas (Pydantic/Zod)
-- [ ] SLA-3 · SLA policy CRUD API
-- [ ] SLA-4 · Response/resolution tracking
-- [ ] SLA-5 · Escalation engine
-- [ ] SLA-6 · SLA compliance reports
-- [ ] SLA-7 · Frontend hooks
-- [ ] SLA-8 · UI: SLA config (admin)
-- [ ] SLA-9 · UI: SLA countdown in ticket
+- [x] SLA-2 · Schemas (Pydantic/Zod)
+- [x] SLA-3 · SLA policy CRUD API
+- [x] SLA-4 · Response/resolution tracking
+- [x] SLA-5 · Escalation engine
+- [x] SLA-6 · SLA compliance reports
+- [x] SLA-7 · Frontend hooks
+- [x] SLA-8 · UI: SLA config (admin)
+- [x] SLA-9 · UI: SLA countdown in ticket
 - [ ] SLA-10 · UI: SLA compliance report view
 - [ ] SLA-11 · ✔ Check — SLA module-wide
 
-## ☐ EPIC-KB · Knowledge Base (0/11)
+## ☐ EPIC-KB · Knowledge Base (9/11)
 - [x] KB-1 · KB schema (Article, KbCategory, ArticleRating)
-- [ ] KB-2 · Schemas (Pydantic/Zod)
-- [ ] KB-3 · Article CRUD + search API
-- [ ] KB-4 · Suggestion engine
-- [ ] KB-5 · Usage + helpfulness tracking
-- [ ] KB-6 · Frontend hooks
-- [ ] KB-7 · UI: KB list + category filters
-- [ ] KB-8 · UI: Article editor
-- [ ] KB-9 · UI: Article view + rating
+- [x] KB-2 · Schemas (Pydantic/Zod)
+- [x] KB-3 · Article CRUD + search API
+- [x] KB-4 · Suggestion engine
+- [x] KB-5 · Usage + helpfulness tracking
+- [x] KB-6 · Frontend hooks
+- [x] KB-7 · UI: KB list + category filters
+- [x] KB-8 · UI: Article editor
+- [x] KB-9 · UI: Article view + rating
 - [ ] KB-10 · Seed/fixtures
 - [ ] KB-11 · ✔ Check — KB module-wide
 

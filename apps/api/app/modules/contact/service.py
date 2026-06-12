@@ -64,6 +64,7 @@ async def log_interaction(db: Prisma, contact_id: str, body: InteractionCreate, 
         "summary": body.summary,
         "happenedAt": body.happenedAt,
     })
+    await record_audit(db, actor_id, "CREATE", "interactions", record_id=interaction.id)
     return interaction
 
 
@@ -74,11 +75,14 @@ async def get_interactions(db: Prisma, contact_id: str) -> list:
     )
 
 
-async def link_account(db: Prisma, contact_id: str, account_id: str, is_primary: bool) -> object:
-    return await db.contactaccount.upsert(
+async def link_account(db: Prisma, contact_id: str, account_id: str, is_primary: bool,
+                       actor_id: str) -> object:
+    result = await db.contactaccount.upsert(
         where={"contactId_accountId": {"contactId": contact_id, "accountId": account_id}},
         data={
             "create": {"contactId": contact_id, "accountId": account_id, "isPrimary": is_primary},
             "update": {"isPrimary": is_primary},
         },
     )
+    await record_audit(db, actor_id, "LINK", "contactaccounts", record_id=contact_id)
+    return result

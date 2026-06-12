@@ -40,3 +40,41 @@ class UserRole(str, Enum):
 class Currency(str, Enum):
     INR = "INR"
     USD = "USD"
+
+
+class TicketStatus(str, Enum):
+    OPEN = "OPEN"
+    IN_PROGRESS = "IN_PROGRESS"
+    WAITING = "WAITING"
+    RESOLVED = "RESOLVED"
+    CLOSED = "CLOSED"
+
+
+class TicketChannel(str, Enum):
+    EMAIL = "EMAIL"
+    PORTAL = "PORTAL"
+    PHONE = "PHONE"
+    MANUAL = "MANUAL"
+    CHAT = "CHAT"
+
+
+class TicketPriority(str, Enum):
+    LOW = "LOW"
+    MEDIUM = "MEDIUM"
+    HIGH = "HIGH"
+    CRITICAL = "CRITICAL"
+
+
+class ActivityType(str, Enum):
+    EMAIL = "EMAIL"
+    CALL = "CALL"
+    MEETING = "MEETING"
+    NOTE = "NOTE"
+    TASK = "TASK"
+
+
+class TaskStatus(str, Enum):
+    OPEN = "OPEN"
+    IN_PROGRESS = "IN_PROGRESS"
+    COMPLETED = "COMPLETED"
+    CANCELLED = "CANCELLED"
